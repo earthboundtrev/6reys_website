@@ -9,7 +9,7 @@ export default function Location() {
           <MapPin className="h-12 w-12 text-pink-500 mx-auto mb-4" />
           <h2 className="text-4xl font-bold mb-4">Find Us</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Located in the heart of rural America, bringing Japanese arcade culture to you
+            Located in the heart of Orange Virginia, bringing Japanese arcade culture to you without you needing to buy a plane ticket!
           </p>
         </div>
         
@@ -19,7 +19,7 @@ export default function Location() {
               <MapPin className="h-6 w-6 text-pink-500 mt-1" />
               <div>
                 <h3 className="font-bold mb-2">Address</h3>
-                <p className="text-gray-400">110B East Washington St., <br />Orange, VA, United States Virgina</p>
+                <p className="text-gray-400">110B East Washington St. <br />Orange, VA 22960</p>
               </div>
             </div>
             

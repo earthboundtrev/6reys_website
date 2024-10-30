@@ -1,34 +1,66 @@
 import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import { Clock, MapPin } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <div id="home" className="relative h-screen">
+    <div className="relative">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80")',
+          backgroundImage: 'url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80")',
         }}
       >
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-slate-900/95 to-slate-900/90"></div>
       </div>
       
-      <div className="relative h-full flex flex-col items-center justify-center text-white px-4">
-        <h1 className="text-5xl md:text-7xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
-          Rural Retro Arcade
-        </h1>
-        <p className="text-xl md:text-2xl text-center mb-8 max-w-2xl">
-          Experience authentic Japanese arcade culture in the heart of rural America
-        </p>
-        <a
-          href="#games"
-          className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition-all"
-        >
-          Explore Our Games
-        </a>
-        
-        <div className="absolute bottom-8 animate-bounce">
-          <ChevronDown className="h-8 w-8 text-pink-500" />
+      <div className="relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+            <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+              <h1 className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
+                <span className="block text-white">An Authentic</span>
+                <span className="block bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                  Arcade Gaming Experience!
+                </span>
+              </h1>
+              <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                Step into our arcade and retro-gaming paradise! Featuring classic fighting, racing, and shooting games and the most iconic arcade titles from the golden age of gaming.
+              </p>
+
+              <div className="mt-8 flex flex-col lg:flex-row lg:gap-8">
+                <a
+                  href="#games"
+                  className="mb-4 lg:mb-0 w-full lg:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-pink-700 transition-colors"
+                >
+                  <span className="lg:hidden">View Our Games!</span>
+                  <span className="hidden lg:inline">Our Games!</span>
+                </a>
+                <a
+                  href="#pricing"
+                  className="mb-4 lg:mb-0 w-full lg:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-pink-700 transition-colors"
+                >
+                  Schedule a Party with us!
+                </a>
+                <a
+                  href="#events"
+                  className="w-full lg:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-pink-700 transition-colors"
+                >
+                  <span className="lg:hidden">View Our Events!</span>
+                  <span className="hidden lg:inline">Our Events!</span>
+                </a>
+              </div>
+            </div>
+            
+            <div className="mt-16 sm:mt-24 lg:mt-0 lg:col-span-6">
+              <div className="relative mx-auto w-full rounded-lg shadow-lg overflow-hidden">
+                <img
+                  src="/images/logo.jpg"
+                  alt="6reys Entertainment Yard logo"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
