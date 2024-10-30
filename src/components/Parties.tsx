@@ -73,7 +73,7 @@ const Parties: React.FC = () => {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <div className="text-center mb-16">
-        <img src="/images/birthday_chicken.jpeg" alt="Event Chicken" className="mx-auto mb-4" />
+        <img src="https://i.imgur.com/JSwNL0C.png" alt="Event Chicken" className="mx-auto mb-4" />
       </div>
 
       <h2 className="text-3xl font-bold text-white mb-8 text-center">Book Your Birthday Party</h2>

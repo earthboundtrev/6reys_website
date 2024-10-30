@@ -24,7 +24,7 @@ export default function Games() {
     <section id="games" className="py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-        <img src="/images/games_chicken.jpeg" alt="Event Chicken" className="mx-auto mb-4" />
+        <img src="https://i.imgur.com/6XkhKhy.png" alt="Event Chicken" className="mx-auto mb-4" />
           <h2 className="text-4xl font-bold mb-4">Featured Games</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Experience our carefully curated selection of authentic Japanese arcade cabinets

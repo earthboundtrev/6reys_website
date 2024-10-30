@@ -10,7 +10,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <img 
-              src="/images/6reys_logo_icon_size.PNG" 
+              src="https://i.imgur.com/tHM2Zg3.png"
               alt="6reys Logo" 
               className="h-8 w-auto"
             />
