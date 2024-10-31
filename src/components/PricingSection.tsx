@@ -44,7 +44,7 @@ export default function PricingSection() {
               duration: "Every Thursday!",
               features: [
                 "Unlimited gaming",
-                "Priority access to new games",
+                "In & out privileges",
                 "Add 20 tokens for an extra $3!",
                 "Add more tokens at any time! 4/$1 or 24/$5!"
               ]
@@ -68,9 +68,6 @@ export default function PricingSection() {
                     </li>
                   ))}
                 </ul>
-                <button className="mt-8 w-full bg-purple-600 hover:bg-pink-700 text-white font-semibold py-3 px-6 rounded-md transition-colors">
-                  Get Started
-                </button>
               </div>
             </div>
           ))}

@@ -24,7 +24,7 @@ export default function Hero() {
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                Step into our arcade and retro-gaming paradise! Featuring classic fighting, racing, and shooting games and the most iconic arcade titles from the golden age of gaming.
+                Step into our arcade, retro-gaming, and gaming paradise! Featuring classic and modern arcade games, modern and retro-consoles, and the most iconic arcade titles from the golden age of gaming.
               </p>
 
               <div className="mt-8 flex flex-col lg:flex-row lg:gap-8">
