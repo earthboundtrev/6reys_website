@@ -19,7 +19,7 @@ export default function PricingSection() {
             {
               name: "Hourly Pass",
               price: "$7",
-              duration: "Per Hour!",
+              duration: "For a Full Hour!",
               features: [
                 "Access to all arcade machines",
                 "Perfect for quick sessions",
@@ -30,7 +30,7 @@ export default function PricingSection() {
             {
               name: "Day Pass",
               price: "$12",
-              duration: "Full Day!",
+              duration: "For a Full Day!",
               features: [
                 "Unlimited gaming all day",
                 "In & out privileges",
@@ -41,7 +41,7 @@ export default function PricingSection() {
             {
               name: "Thursday Special!",
               price: "$8",
-              duration: "Every Thursday!",
+              duration: "Deal offered every Thursday!",
               features: [
                 "Unlimited gaming",
                 "In & out privileges",
