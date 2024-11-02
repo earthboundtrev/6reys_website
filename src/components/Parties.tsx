@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Parties: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -55,11 +56,39 @@ const Parties: React.FC = () => {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      // Handle form submission here
-      console.log('Form submitted:', formData);
+      try {
+        const templateParams = {
+          to_email: 'SixREYS@outlook.com',
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.partyDetails
+        };
+
+        await emailjs.send(
+          'YOUR_SERVICE_ID', // Get this from EmailJS dashboard
+          'YOUR_TEMPLATE_ID', // Get this from EmailJS dashboard
+          templateParams,
+          'YOUR_PUBLIC_KEY' // Get this from EmailJS dashboard
+        );
+
+        alert('Thank you for your party request! We will contact you soon.');
+        
+        // Clear form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          partyDetails: ''
+        });
+      } catch (error) {
+        console.error('Error sending email:', error);
+        alert('Sorry, there was an error sending your request. Please try again or contact us directly.');
+      }
     }
   };
 
@@ -73,7 +102,37 @@ const Parties: React.FC = () => {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <div className="text-center mb-16">
-        <img src="https://i.imgur.com/JSwNL0C.png" alt="Event Chicken" className="mx-auto mb-4" />
+         <img src="https://i.imgur.com/JSwNL0C.png" alt="Event Chicken" className="mx-auto mb-4" />
+      </div>
+
+      <div className="text-gray-300 space-y-6 mb-12">
+        <p>
+          There has been a lot of continued interest in our party space rental, so here is a few pictures and rundown or what we have to offer for here at GREYs!
+        </p>
+
+        <p>
+          Our rates start at <span className="text-white font-semibold">$250 for 2hrs and up to 20 players</span>. That includes same access as a normal day at the arcade (all games on freeplay, console games, as well as prize games, and $2 worth of tokens for each of the 20 players).
+        </p>
+
+        <p>
+          The time slots for that price are <span className="text-white font-semibold">10-12 Saturday and 11-1 on Sunday</span>, or if you do not mind having the party during public hrs and sharing the space with our wonderful customers, then anytime on those days can also be booked for that starting rate. IF you would like to have your party during normal operating hours and close the arcade to you just your event, it is an additional <span className="text-white font-semibold">$100 ($350 total)</span>.
+        </p>
+
+        <p>
+          We also offer <span className="text-white font-semibold">double prize tickets</span> for the guests of your party for an additional <span className="text-white font-semibold">$40</span>. This gives the partygoers a chance to earn twice as much from our redemption games, and bag those ticket items everyone has their eyes on in our display case!
+        </p>
+
+        <p>
+          Also <span className="text-white font-semibold">$50</span> off the price is a deposit and will be refunded at the conclusion of your event, as long as everything is clean when you leave. We also offer a reduced rate of <span className="text-white font-semibold">$5 per player</span> for anyone wishing to stay after the event and play for the rest of the day.
+        </p>
+
+        <p>
+          Please contact using here using the form below or call us at <span className="text-white font-semibold">(540)-661-8666</span> to begin to plan your event with us!
+        </p>
+      </div>
+
+      <div className="text-center mb-16">
+         <img src="https://imgur.com/Ngy3R8W.png" alt="Event Chicken" className="mx-auto mb-4" />
       </div>
 
       <h2 className="text-3xl font-bold text-white mb-8 text-center">Book Your Birthday Party</h2>
