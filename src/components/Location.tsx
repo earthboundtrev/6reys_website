@@ -28,8 +28,9 @@ export default function Location() {
               <div>
                 <h3 className="font-bold mb-2">Hours</h3>
                 <p className="text-gray-400">
-                  Monday - Tuesday: CLOSED <br />
-                  Wednesday - Sunday: 12PM - 10PM<br />
+                  Monday - Wednesday: CLOSED <br />
+                  Thursday: 12PM - 8PM <br />
+                  Friday - Sunday: 12PM - 10PM <br />
                 </p>
               </div>
             </div>
