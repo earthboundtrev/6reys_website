@@ -240,16 +240,16 @@ const Parties: React.FC = () => {
 const carouselImages = [
   { url: "https://imgur.com/J9JZ4TN.png", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
   { url: "https://imgur.com/QsEVnyW.png", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/370141510_277660371851186_5328819192749088109_n.jpg", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/405963056_306020055681884_8584549272772571419_n.jpg", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/449468653_438775552406333_8465903172928480941_n.jpg", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/370173376_277660715184485_4602905087678029944_n.jpg", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/398844317_294766103473946_190448731070271638_n.jpg", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/439840599_396404836643405_4421939957021148196_n.jpg", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/426354758_352422147708341_3133596068573353228_n.jpg", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/426226505_352394054377817_5228130841509951101_n.jpg", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/419678725_334406189509937_807479287255226743_n.jpg", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/404554988_303722489244974_638050161365395662_n.jpg", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/370141510_277660371851186_5328819192749088109_n.jpg", alt: "Picture of some of games available for purchase and trade-in at GR's entertainmen yard" },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/405963056_306020055681884_8584549272772571419_n.jpg", alt: "Another picture of some of games available for purchase and trade-in at GR's entertainmen yard" },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/449468653_438775552406333_8465903172928480941_n.jpg", alt: "Gameboy Color being traded-in boxed with some other games including a boxed copy of Perfect Dark for N64." },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/370173376_277660715184485_4602905087678029944_n.jpg", alt: "Pokemon games including Pokemon Yellow, Pokemon Red, and Pokemon Dark Sun being traded in at 6R's entertainment yard." },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/398844317_294766103473946_190448731070271638_n.jpg", alt: "Complete box of Steel Battalion being traded into 6R's entertainment yard (we do not still have this game on the shelf...)." },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/439840599_396404836643405_4421939957021148196_n.jpg", alt: "Sega 32x, Nintendo 3DS, and some Gamecube games being traded into the arcade " },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/426354758_352422147708341_3133596068573353228_n.jpg", alt: "Guitar Hero for Xbox 360 and some Xbox 360 games being traded into 6R's entertainment yard." },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/426226505_352394054377817_5228130841509951101_n.jpg", alt: "Persona, Final Fantasy, Mario, Sonic and Zelda being traded into 6R's entertainment yard." },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/419678725_334406189509937_807479287255226743_n.jpg", alt: "A bunch of Nintendo Entertainment System games and Nintendo 64 games being traded into 6R's entertainment yard." },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/404554988_303722489244974_638050161365395662_n.jpg", alt: "Gamecube controller, Gamecube games, and Nintendo 64 game being traded into 6R's entertainment yard." },
 ];
 
 export default function Tradeins() {
