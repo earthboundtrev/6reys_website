@@ -8,6 +8,7 @@ import Location from './components/Location';
 import Parties from './components/Parties';
 import PricingSection from './components/PricingSection';
 import Footer from './components/Footer';
+import Tradeins from './components/Tradeins';
 
 function App() {
   return (
@@ -39,11 +40,17 @@ function App() {
             <Footer />
           </>
         } />
-          <Route path="/events" element={
-            
+          <Route path="/events" element={  
             <>
             <Navbar />
             <Events />
+            <Footer />
+          </>
+        } />
+        <Route path="/tradeins" element={  
+            <>
+            <Navbar />
+            <Tradeins/>
             <Footer />
           </>
         } />
