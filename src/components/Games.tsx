@@ -71,7 +71,7 @@ export default function Games() {
           <br/>
           
           <p>
-            We have a ton of dedicated racing arcade cabinets! Do you want to drive a car? We've got Dayonta USA, San Francisco Rush: Extreme Racing, Scud Race and Crazy Taxi for that! Do you want to ride a motorcycle? You can do that with Suzuka 8 hours.  
+            We have a ton of dedicated racing arcade cabinets! Do you want to drive a car? We've got Dayonta USA, San Francisco Rush: Extreme Racing, Sega Super GT, and Crazy Taxi for that! Do you want to ride a motorcycle? You can do that with Suzuka 8 hours.  
           </p>
 
           <br/>
