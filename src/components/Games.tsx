@@ -3,35 +3,15 @@ import { Gamepad2 } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 
-// const games = [
-//   {
-//     title: "Arcade Cabinets",
-//     cabinet: "Candy Cabinet",
-//     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-//   },
-//   {
-//     title: "Initial D Arcade Stage",
-//     cabinet: "Driving Cabinet",
-//     image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-//   },
-//   {
-//     title: "DoDonPachi",
-//     cabinet: "Candy Cabinet",
-//     image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-//   }
-// ];
-
 const carouselImages = [
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(5%20of%2057).png", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(6%20of%2057).png", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(7%20of%2057).png", alt: "High-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(8%20of%2057).png", alt: "Picture of Sega Super GT arcade cabinets at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(13%20of%2057).png", alt: "Picture of Police Trainer arcade cabinet at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(14%20of%2057).png", alt: "Picture of Simpsons Pinball machine at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(15%20of%2057).png", alt: "Picture of the console setup at 6R's entertainment yard. Xbox One X and Playstation 5 consoles are shown" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(44%20of%2057).png", alt: "Picture of high score board at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(37%20of%2057).png", alt: "Picture of Xbox One X controller at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(16%20of%2057).png", alt: "Picture of fancy new claw machine at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(17%20of%2057).png", alt: "Small toddler sized arcade cabinets with Pac Man and a Paw Patrol game at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(9%20of%2057).png", alt: "Picture of mother and daughter playing Teenage Mutant Ninja Turtle arcade game at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(30%20of%2057).png", alt: "Picture of someone using arcade stick at 6R's entertainment yard" },
@@ -42,7 +22,6 @@ const carouselImages = [
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(20%20of%2057).png", alt: "Picture of airhockey table at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(26%20of%2057).png", alt: "Picture of Star Wars Trilogy arcade cabinet at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(27%20of%2057).png", alt: "Picture of Suzuka 8 hours arcade cabinet at 6R's entertainment yard" },
-  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(38%20of%2057).png", alt: "Picture of redemption machine at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(42%20of%2057).png", alt: "Picture of controller for Xbox One X at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(45%20of%2057).png", alt: "Picture of Iron Maiden arcade machine at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(46%20of%2057).png", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
@@ -68,11 +47,45 @@ export default function Games() {
   return (
     <section id="games" className="py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Featured Arcade Games and Cabinets</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Experience our carefully curated selection of authentic American and Japanese arcade cabinets!
+      <div className="text-center mb-16 bg-black-900">
+         <img src="https://i.imgur.com/xCmlmje.png" alt="6R's entertainment yard logo" className="mx-auto mb-4" />
+      </div>
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold mb-4 text-center">Featured Arcade Games and Cabinets</h2>
+          <div className="text-gray-400 max-w-2xl mx-auto">
+           <p>
+            We love videogames here at GR's!
           </p>
+
+          <br/>
+
+          <p>
+            How much do we love videogames? We love them so much that we've assembled a great collection of arcade cabinets, modern consoles, and arcade and console games for you to play with. We like to share here at 6R's.
+          </p>
+          
+
+          <br/>
+
+          <p>What exactly are we sharing with you? Classic arcade games like Misslie Command, Mortal Kombat, and Pac Man for starters! We've got dedicated machines for NBA Jam, NFL Blitz, and the niche classic Outzone you're into shooting games.</p>
+
+          <br/>
+          
+          <p>
+            We have a ton of dedicated racing arcade cabinets! Do you want to drive a car? We've got Dayonta USA, San Francisco Rush: Extreme Racing, Scud Race and Crazy Taxi for that! Do you want to ride a motorcycle? You can do that with Suzuka 8 hours.  
+          </p>
+
+          <br/>
+
+          <p>Our real variety comes with our multi game cabinet systems. We have an authetic retro Neo Geo MVS cabinet this loaded with different fighting, sports, or shooting games. We also have TWO newer and linked Lindbergh Universal Cabinets that are able to play classic games that you remember from the 1980's but can also load games as that came out as recently as a two or five years ago in arcades in the east! If you would like to know more about the games that are loaded on these two machines or would like to change them ask at the front desk, and they will see what they can do for you. </p>
+
+          <br/>
+
+          <p>We even have air hockey!</p>
+
+          <br/>
+
+          <p>Don't just take my word for it! We've got some pictures that show you exactly what I mean below!</p>
+          </div>
         </div>
         
         <div className="relative mb-16">

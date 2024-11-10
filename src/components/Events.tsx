@@ -6,9 +6,9 @@ export default function Events() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <img src="https://i.imgur.com/8on1Bky.png" alt="Event Chicken" className="mx-auto mb-4" />
-          <h2 className="text-4xl font-bold mb-4">Upcoming Events</h2>
+          <h2 className="text-4xl font-bold mb-4 text-center">Upcoming Events</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Join our competitive events and become part of our growing community!
+            Join us for our upccoming competitive events and become part of our growing community!
           </p>
         </div>
         

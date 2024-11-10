@@ -354,14 +354,21 @@ export default function Tradeins() {
   return (
     <section id="games" className="py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className=" mb-16">
           <img src="https://i.imgur.com/6XkhKhy.png" alt="Trade-In Chicken" className="mx-auto mb-4" />
-          <h2 className="text-4xl font-bold mb-4">Featured Games Available for Purchase</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-6">
-            Browse our extensive collection of games available for purchase, or bring in your own titles to trade. Exchange your games for something new from our shelves or opt for store credit – the choice is yours!
+          <h2 className="text-4xl font-bold mb-4 text-center">Featured Games Available for Purchase</h2>
+          <div className="text-gray-400 max-w-2xl mx-auto mb-6">
+            <p>
+              Browse our extensive collection of games available for purchase, or bring in your own titles to trade. 
+          </p>
+           
+          <br/>
+          <p>
+            Exchange your games for something new from our shelves or opt for store credit – the choice is yours!
           </p>
 
-          <br/>
+          
+          </div>
         </div>
         
         <div className="relative mb-16">

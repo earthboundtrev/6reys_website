@@ -106,8 +106,9 @@ const Parties: React.FC = () => {
       </div>
 
       <div className="text-gray-300 space-y-6 mb-12">
+      <h2 className="text-4xl font-bold mb-4 text-center">Have your party at 6Rs!</h2>
         <p>
-          There has been a lot of continued interest in our party space rental, so here is a few pictures and rundown or what we have to offer for here at GREYs!
+          There has been a lot of continued interest in our party space rental, so here is a few pictures and rundown or what we have to offer for here at GR's!
         </p>
 
         <p>
@@ -135,7 +136,7 @@ const Parties: React.FC = () => {
          <img src="https://imgur.com/Ngy3R8W.png" alt="Event Chicken" className="mx-auto mb-4" />
       </div>
 
-      <h2 className="text-3xl font-bold text-white mb-8 text-center">Book Your Birthday Party</h2>
+      <h2 className="text-3xl font-bold text-white mb-8 text-center">Book Your Party!</h2>
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
