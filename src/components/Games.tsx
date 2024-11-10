@@ -80,7 +80,7 @@ export default function Games() {
 
           <br/>
 
-          <p>We even have air hockey!</p>
+          <p>We even have air hockey and pinball!</p>
 
           <br/>
 
