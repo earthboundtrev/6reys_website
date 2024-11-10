@@ -9,6 +9,7 @@ import Parties from './components/Parties';
 import PricingSection from './components/PricingSection';
 import Footer from './components/Footer';
 import Tradeins from './components/Tradeins';
+import Prizes from './components/Prizes';
 
 function App() {
   return (
@@ -51,6 +52,13 @@ function App() {
             <>
             <Navbar />
             <Tradeins/>
+            <Footer />
+          </>
+        } />
+        <Route path="/prizes" element={  
+            <>
+            <Navbar />
+            <Prizes/>
             <Footer />
           </>
         } />
