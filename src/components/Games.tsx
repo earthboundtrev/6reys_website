@@ -71,12 +71,12 @@ export default function Games() {
           <br/>
           
           <p>
-            We have a ton of dedicated racing arcade cabinets! Do you want to drive a car? We've got Dayonta USA, San Francisco Rush: Extreme Racing, Sega Super GT, and Crazy Taxi for that! Do you want to ride a motorcycle? You can do that with Suzuka 8 hours.  
+            We have a ton of dedicated racing arcade cabinets! Do you want to drive a car? We've got Dayonta USA, San Francisco Rush: Extreme Racing, Sega Super GT, and Crazy Taxi for that! Do you want to ride a motorcycle? You can do that with Suzuka 8 hours. Do you want to fight in a Star War? We've got a dedicated cabinet for that. Do you want to be a Ninja Turtle? We've got a dedicated arcade cabinet for that too!  
           </p>
 
           <br/>
 
-          <p>Our real variety comes with our multi game cabinet systems. We have an authetic retro Neo Geo MVS cabinet this loaded with different fighting, sports, or shooting games. We also have TWO newer and linked Lindbergh Universal Cabinets that are able to play classic games that you remember from the 1980's but can also load games as that came out as recently as a two or five years ago in arcades in the east! If you would like to know more about the games that are loaded on these two machines or would like to change them ask at the front desk, and they will see what they can do for you. </p>
+          <p>Our real variety comes with our multi game cabinet systems. We have an authetic retro Neo Geo MVS cabinet this loaded with different fighting, sports, sidescrollers, puzzle games, brawlers, or shooting games. We also have TWO newer and linked Lindbergh Universal Cabinets that are able to play classic games that you remember from the 1980's but can also load games as that came out as recently as a two or five years ago in arcades in the east! If you would like to know more about the games that are loaded on these two machines or would like to change them ask at the front desk, and they will see what they can do for you. </p>
 
           <br/>
 
