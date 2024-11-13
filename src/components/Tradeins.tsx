@@ -367,6 +367,11 @@ export default function Tradeins() {
             Exchange your games for something new from our shelves or opt for store credit – the choice is yours!
           </p>
 
+          <br/>
+
+          <p>
+            Disclaimer: All of the games shown in the carousel below aren't neccesarily still at the arcade, but all of these games are examples of ones that have come into the arcade via trade-in.
+          </p>
           
           </div>
         </div>
