@@ -130,18 +130,6 @@ export default function Games() {
             ))}
           </div>
         </div>
-
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {games.map((game, index) => (
-            <div key={index} className="bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all">
-              <img src={game.image} alt={game.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{game.title}</h3>
-                <p className="text-gray-400">{game.cabinet}</p>
-              </div>
-            </div>
-          ))}
-        </div> */}
       </div>
     </section>
   );
