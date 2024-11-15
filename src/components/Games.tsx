@@ -54,7 +54,7 @@ export default function Games() {
           <h2 className="text-4xl font-bold mb-4 text-center">Featured Arcade Games and Cabinets</h2>
           <div className="text-gray-400 max-w-2xl mx-auto">
            <p>
-            We love videogames here at GR's!
+            We love videogames here at 6R's!
           </p>
 
           <br/>
