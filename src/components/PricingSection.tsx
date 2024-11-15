@@ -10,7 +10,7 @@ export default function PricingSection() {
             Gaming Passes
           </h2>
           <p className="mt-4 text-gray-300">
-            Choose your perfect pass and start gaming
+            Choose your perfect pass and start gaming!
           </p>
         </div>
 
