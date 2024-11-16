@@ -11,13 +11,13 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Newsletter</h3>
             <p className="text-gray-300 mb-4">Subscribe to get updates about new games and events!</p>
-            <div className="flex">
+            <div className="flex flex-col min-[800px]:flex-row gap-2 min-[800px]:gap-0">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-l-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+                className="w-full min-[800px]:w-auto flex-1 px-4 py-2 rounded-md min-[800px]:rounded-r-none bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
               />
-              <button className="px-4 py-2 bg-purple-600 hover:bg-pink-700 text-white rounded-r-md transition-colors">
+              <button className="w-full min-[800px]:w-auto px-4 py-2 bg-purple-600 hover:bg-pink-700 text-white rounded-md min-[800px]:rounded-l-none transition-colors">
                 Subscribe
               </button>
             </div>
