@@ -15,16 +15,16 @@ export default function Events() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
-              src="https://i.imgur.com/ELcIuuF.jpg"
-              alt="November Calendar" 
+              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/december_calendar_caldendar_view.png"
+              alt="December Calendar" 
               className="w-full h-full object-contain rounded-lg"
             />
           </div>
           
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
-              src="https://i.imgur.com/4KxzNlg.jpg"
-              alt="November Events" 
+              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/december_calendar_list_view.png"
+              alt="December Events" 
               className="w-full h-auto rounded-lg"
             />
           </div>
