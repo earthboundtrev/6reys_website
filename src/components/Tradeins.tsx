@@ -3,6 +3,7 @@ import { Gamepad2 } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Carousel from './Carousel';
 
 const Parties: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -237,7 +238,7 @@ const Parties: React.FC = () => {
   );
 };
 
-const carouselImages = [
+const tradeinImages = [
   { url: "https://imgur.com/J9JZ4TN.png", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
   { url: "https://imgur.com/QsEVnyW.png", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/370141510_277660371851186_5328819192749088109_n.jpg", alt: "Picture of some of games available for purchase and trade-in at GR's entertainmen yard" },
@@ -271,7 +272,7 @@ export default function Tradeins() {
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+      setCurrentIndex((prev) => (prev === tradeinImages.length - 1 ? 0 : prev + 1));
     }, 5000); // 5000ms = 5 seconds
 
     // Cleanup function to clear the interval when component unmounts
@@ -376,47 +377,8 @@ export default function Tradeins() {
           </div>
         </div>
         
-        <div className="relative mb-16">
-          <div className="overflow-hidden">
-            <div className="flex transition-transform duration-500 ease-in-out" 
-                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-              {carouselImages.map((image, index) => (
-                <div key={index} className="w-full flex-shrink-0">
-                  <img
-                    src={image.url}
-                    alt={image.alt}
-                    className="w-full aspect-[1000/667] object-contain bg-black-900"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 rounded-full text-white"
-            onClick={() => setCurrentIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1))}
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 rounded-full text-white"
-            onClick={() => setCurrentIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1))}
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-          
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {carouselImages.map((_, index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-full ${
-                  currentIndex === index ? 'bg-white' : 'bg-white/50'
-                }`}
-                onClick={() => setCurrentIndex(index)}
-              />
-            ))}
-          </div>
+        <div className="mb-16">
+          <Carousel images={tradeinImages} />
         </div>
 
       </div>

@@ -2,8 +2,9 @@ import React from 'react';
 import { Gamepad2 } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
+import Carousel from './Carousel';
 
-const carouselImages = [
+const gameImages = [
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(5%20of%2057).png", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(6%20of%2057).png", alt: "Low-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(7%20of%2057).png", alt: "High-angled shot of arcade stick and Lindy arcade cabinet at 6R's entertainment yard" },
@@ -33,17 +34,6 @@ const carouselImages = [
 ];
 
 export default function Games() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
-    }, 5000); // 5000ms = 5 seconds
-
-    // Cleanup function to clear the interval when component unmounts
-    return () => clearInterval(timer);
-  }, []); // Empty dependency array means this effect runs once on mount
-
   return (
     <section id="games" className="py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,47 +78,8 @@ export default function Games() {
           </div>
         </div>
         
-        <div className="relative mb-16">
-          <div className="overflow-hidden">
-            <div className="flex transition-transform duration-500 ease-in-out" 
-                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-              {carouselImages.map((image, index) => (
-                <div key={index} className="w-full flex-shrink-0">
-                  <img
-                    src={image.url}
-                    alt={image.alt}
-                    className="w-full aspect-[1000/667] object-contain bg-black-900"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 rounded-full text-white"
-            onClick={() => setCurrentIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1))}
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 rounded-full text-white"
-            onClick={() => setCurrentIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1))}
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-          
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {carouselImages.map((_, index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-full ${
-                  currentIndex === index ? 'bg-white' : 'bg-white/50'
-                }`}
-                onClick={() => setCurrentIndex(index)}
-              />
-            ))}
-          </div>
+        <div className="mb-16">
+          <Carousel images={gameImages} />
         </div>
       </div>
     </section>
