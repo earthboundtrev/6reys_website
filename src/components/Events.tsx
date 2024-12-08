@@ -13,7 +13,7 @@ export default function Events() {
           <img src="https://i.imgur.com/8on1Bky.png" alt="Event Chicken" className="mx-auto mb-4" />
           <h2 className="text-4xl font-bold mb-4 text-center">Upcoming Events</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Join us for our upccoming competitive events and become part of our growing community!
+            Join us for our upcoming competitive events and become part of our growing community! Click on the images if you want to be able see bigger versions of them!
           </p>
         </div>
         
