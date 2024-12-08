@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 interface CarouselImage {
   url: string;
@@ -13,6 +13,7 @@ interface CarouselProps {
 
 export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [zoomedImage, setZoomedImage] = useState<CarouselImage | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -32,7 +33,8 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
               <img
                 src={image.url}
                 alt={image.alt}
-                className="w-full aspect-[1000/667] object-contain bg-black-900"
+                className="w-full aspect-[1000/667] object-contain bg-black-900 cursor-pointer"
+                onClick={() => setZoomedImage(image)}
               />
             </div>
           ))}
@@ -64,6 +66,24 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
           />
         ))}
       </div>
+
+      {zoomedImage && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
+          <div className="relative">
+            <button
+              className="absolute -top-4 -right-4 bg-black/50 p-2 rounded-full text-white hover:text-gray-300"
+              onClick={() => setZoomedImage(null)}
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img
+              src={zoomedImage.url}
+              alt={zoomedImage.alt}
+              className="max-h-[90vh] max-w-[90vw] object-contain"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 } 
