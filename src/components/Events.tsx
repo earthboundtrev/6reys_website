@@ -9,12 +9,21 @@ export default function Events() {
   return (
     <section id="events" className="py-20 bg-gradient-to-b from-black to-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="mb-16">
           <img src="https://i.imgur.com/8on1Bky.png" alt="Event Chicken" className="mx-auto mb-4" />
           <h2 className="text-4xl font-bold mb-4 text-center">Upcoming Events</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Join us for our upcoming competitive events and become part of our growing community! Click on the images if you want to be able see bigger versions of them!
+          <div className="text-gray-400 max-w-2xl mx-auto text-center">
+          <p>
+            Join us for our upcoming competitive events and become part of our growing community! 
           </p>
+
+          <br />
+
+          <p>
+             Click on the images if you want to be able to see bigger versions of them!
+          </p>
+          
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
