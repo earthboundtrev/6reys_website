@@ -23,7 +23,7 @@ export default function PricingSection() {
               features: [
                 "Access to all arcade machines",
                 "Perfect for quick sessions",
-                "Add an intial 20 tokens for an extra $3!",
+                "Add an initial 20 tokens for an extra $3!",
                 "Add more tokens at any time! 4/$1 or 24/$5!"
               ]
             },
@@ -34,7 +34,7 @@ export default function PricingSection() {
               features: [
                 "Unlimited gaming all day",
                 "In & out privileges",
-                "Add an intial 20 tokens for an extra $3!",
+                "Add an initial 20 tokens for an extra $3!",
                 "Add more tokens at any time! 4/$1 or 24/$5!"
               ]
             },

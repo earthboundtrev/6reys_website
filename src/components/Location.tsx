@@ -9,7 +9,7 @@ export default function Location() {
           <MapPin className="h-12 w-12 text-pink-500 mx-auto mb-4" />
           <h2 className="text-4xl font-bold mb-4">Find Us</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Located in the heart of Orange Virginia, where we bring high-quality classic and modern videogames to you at an incredible price!
+            Located in the heart of Orange, Virginia, where we bring high-quality classic and modern videogames to you at an incredible price!
           </p>
         </div>
         
