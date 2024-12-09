@@ -108,7 +108,7 @@ const Parties: React.FC = () => {
       <div className="text-gray-300 space-y-6 mb-12">
       <h2 className="text-4xl font-bold mb-4 text-center">Have your party at 6Rs!</h2>
         <p>
-          There has been a lot of continued interest in our party space rental, so here is a rundown or what we have to offer here at GR's!
+          There has been a lot of continued interest in our party space rental, so here is a rundown of what we have to offer here at 6R's!
         </p>
 
         <p>
@@ -116,7 +116,7 @@ const Parties: React.FC = () => {
         </p>
 
         <p>
-          The timeslots for that price are <span className="text-white font-semibold">10-12 Saturday and 11-1 on Sunday</span>, or if you do not mind having the party during public hrs and sharing the space with our wonderful customers, then anytime on those days can also be booked for that starting rate. IF you would like to have your party during normal operating hours and close the arcade to you just your event, it is an additional <span className="text-white font-semibold">$100 ($350 total)</span>.
+          The timeslots for that price are <span className="text-white font-semibold">10-12 Saturday and 11-1 on Sunday</span>, or if you do not mind having the party during public hours and sharing the space with our wonderful customers, then anytime on those days can also be booked for that starting rate. If you would like to have your party during normal operating hours and close the arcade to just your event, it is an additional <span className="text-white font-semibold">$100 ($350 total)</span>.
         </p>
 
         <p>

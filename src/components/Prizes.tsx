@@ -33,7 +33,7 @@ export default function Prizes() {
           <h2 className="text-4xl font-bold mb-4 text-center">We have tickets and prizes!</h2>
           <div className="text-gray-400 max-w-2xl mx-auto">
            <p>
-            Do you like prizes? You want win them at 6R's! We have lots of exciting redemption games where you can earn tickets to trade in for awesome prizes.
+            Do you like prizes? You can win them at 6R's! We have lots of exciting redemption games where you can earn tickets to trade in for awesome prizes.
           </p>
 
           <br/>
@@ -57,7 +57,7 @@ export default function Prizes() {
           <br/>
           
           <p>
-          The prizes we offer can change depending on what we have in stock. Check out the carousel below to see examples of some of the awesome prizes we've featured in the past! From small trinkets to bigger items, there's something for everyone.
+            The prizes we offer can change depending on what we have in stock. Check out the carousel below to see examples of some of the awesome prizes we've featured in the past! From small trinkets to bigger items, there's something for everyone.
           </p>
 
           </div>

@@ -371,7 +371,7 @@ export default function Tradeins() {
           <br/>
 
           <p>
-            Disclaimer: All of the games shown in the carousel below aren't neccesarily still at the arcade, but all of these games are examples of ones that have come into the arcade via trade-in.
+            Disclaimer: All of the games shown in the carousel below aren't necessarily still at the arcade, but all of these games are examples of ones that have come into the arcade via trade-in.
           </p>
           
           </div>
