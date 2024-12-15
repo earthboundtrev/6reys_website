@@ -14,6 +14,9 @@ interface CarouselProps {
 export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [zoomedImage, setZoomedImage] = useState<CarouselImage | null>(null);
+  const dotsPerPage = 8;
+  const currentDotSet = Math.floor(currentIndex / dotsPerPage);
+  const totalDotSets = Math.ceil(images.length / dotsPerPage);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -22,6 +25,12 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
 
     return () => clearInterval(timer);
   }, [images.length, autoPlayInterval]);
+
+  const getDotIndices = () => {
+    const start = currentDotSet * dotsPerPage;
+    const end = Math.min(start + dotsPerPage, images.length);
+    return Array.from({ length: end - start }, (_, i) => start + i);
+  };
 
   return (
     <div className="relative">
@@ -56,10 +65,10 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
       </button>
       
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {images.map((_, index) => (
+        {getDotIndices().map((index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full ${
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
               currentIndex === index ? 'bg-white' : 'bg-white/50'
             }`}
             onClick={() => setCurrentIndex(index)}
