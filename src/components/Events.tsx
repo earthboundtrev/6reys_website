@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NavigationArrow from './NavigationArrow';
 
 export default function Events() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -8,6 +9,7 @@ export default function Events() {
 
   return (
     <section id="events" className="py-20 bg-gradient-to-b from-black to-gray-900 text-white">
+      <NavigationArrow />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <img src="https://i.imgur.com/8on1Bky.png" alt="Event Chicken" className="mx-auto mb-4" />

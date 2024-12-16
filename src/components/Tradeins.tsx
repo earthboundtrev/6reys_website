@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Carousel from './Carousel';
+import NavigationArrow from './NavigationArrow';
 
 const Parties: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -354,6 +355,7 @@ export default function Tradeins() {
 
   return (
     <section id="games" className="py-20 bg-black text-white">
+      <NavigationArrow />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className=" mb-16">
           <img src="https://i.imgur.com/6XkhKhy.png" alt="Trade-In Chicken" className="mx-auto mb-4" />

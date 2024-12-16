@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import NavigationArrow from './NavigationArrow';
 
 const Parties: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -101,12 +102,13 @@ const Parties: React.FC = () => {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
+      <NavigationArrow />
       <div className="text-center mb-16">
          <img src="https://i.imgur.com/JSwNL0C.png" alt="Event Chicken" className="mx-auto mb-4" />
+         <h2 className="text-4xl font-bold mb-4 text-center">Have your party at 6Rs!</h2>
       </div>
 
       <div className="text-gray-300 space-y-6 mb-12">
-      <h2 className="text-4xl font-bold mb-4 text-center">Have your party at 6Rs!</h2>
         <p>
           There has been a lot of continued interest in our party space rental, so here is a rundown of what we have to offer here at 6R's!
         </p>
