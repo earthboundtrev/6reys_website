@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Clock, Phone } from 'lucide-react';
+import { MapPin, Clock, Phone, Mail } from 'lucide-react';
 
 export default function Location() {
   return (
@@ -42,7 +42,17 @@ export default function Location() {
                 <p className="text-gray-400">(540) 661-8866</p>
               </div>
             </div>
+
+            <div className="flex items-start space-x-4">
+              <Mail className="h-6 w-6 text-pink-500 mt-1" />
+              <div>
+                <h3 className="font-bold mb-2">Email</h3>
+                <p className="text-gray-400">SIXREYS@outlook.com</p>
+              </div>
+            </div>
           </div>
+
+          
           
           <div className="h-96 bg-gray-800 rounded-lg overflow-hidden">
             <iframe

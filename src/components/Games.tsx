@@ -3,6 +3,7 @@ import { Gamepad2 } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import Carousel from './Carousel';
+import VideoPlayer from './VideoPlayer';
 
 const gameImages = [
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(5%20of%2057).png", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
@@ -40,6 +41,7 @@ export default function Games() {
       <div className="text-center mb-16 bg-black-900">
          <img src="https://i.imgur.com/xCmlmje.png" alt="6R's entertainment yard logo" className="mx-auto mb-4" />
       </div>
+      
         <div className="mb-16">
           <h2 className="text-4xl font-bold mb-4 text-center">Featured Arcade Games and Cabinets</h2>
           <div className="text-gray-400 max-w-2xl mx-auto">
@@ -52,9 +54,15 @@ export default function Games() {
           <p>
             How much do we love videogames? We love them so much that we've assembled a great collection of arcade cabinets, modern consoles, and arcade and console games for you to play with. We like to share here at 6R's.
           </p>
-          
 
           <br/>
+
+          <br/>
+
+          {/* <VideoPlayer 
+           videoUrl="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/20241201_184257.mp4"
+           title="Video Title"
+           /> */}
 
           <p>What exactly are we sharing with you? Classic arcade games like Missile Command, Mortal Kombat, and Pac Man for starters! We've got dedicated machines for NBA Jam, NFL Blitz, and the niche classic Outzone if you're into shooting games.</p>
 
