@@ -34,14 +34,14 @@ const NavigationArrow: React.FC = () => {
 
   return (
     <>
-      {/* Bottom center arrow */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Bottom center arrow - hidden on mobile, visible on sm and up */}
+      <div className="hidden sm:fixed sm:bottom-8 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:animate-bounce">
         <div className="bg-pink-500 p-3 rounded-full shadow-lg hover:bg-pink-600 cursor-pointer">
           <ArrowDown className="h-10 w-10 text-white" />
         </div>
       </div>
 
-      {/* Side arrow */}
+      {/* Side arrow - visible on all screens */}
       <div className="fixed top-1/2 right-[15%] transform -translate-y-1/2 animate-bounce">
         <div className="bg-pink-500 p-3 rounded-full shadow-lg hover:bg-pink-600 cursor-pointer">
           <ArrowDown className="h-10 w-10 text-white" />
