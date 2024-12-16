@@ -38,7 +38,7 @@ export default function Location() {
             <div className="flex items-start space-x-4">
               <Phone className="h-6 w-6 text-pink-500 mt-1" />
               <div>
-                <h3 className="font-bold mb-2">Contact</h3>
+                <h3 className="font-bold mb-2">Phone</h3>
                 <p className="text-gray-400">(540) 661-8866</p>
               </div>
             </div>
