@@ -1,14 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowDown } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
-const NavigationArrow: React.FC = () => {
+interface NavigationArrowProps {
+  waitForScroll?: boolean; // Optional prop to determine behavior
+}
+
+const NavigationArrow: React.FC<NavigationArrowProps> = ({ waitForScroll = false }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    // Only show arrows if we're at the top of the page
-    const isAtTop = window.scrollY === 0;
-    
-    if (isAtTop) {
+    if (waitForScroll) {
+      // Complex scroll-aware logic for pages that need it
+      setIsVisible(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const observer = new MutationObserver(() => {
+        if (window.scrollY === 0) {
+          const showArrowTimer = setTimeout(() => {
+            setIsVisible(true);
+            
+            const hideArrowTimer = setTimeout(() => {
+              setIsVisible(false);
+            }, 3000);
+
+            return () => clearTimeout(hideArrowTimer);
+          }, 500);
+
+          observer.disconnect();
+          return () => clearTimeout(showArrowTimer);
+        }
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+      });
+
+      return () => {
+        observer.disconnect();
+      };
+    } else {
+      // Simple immediate display logic
       setIsVisible(true);
       const timer = setTimeout(() => {
         setIsVisible(false);
@@ -16,9 +51,9 @@ const NavigationArrow: React.FC = () => {
 
       return () => clearTimeout(timer);
     }
-  }, []); // Run once when component mounts
+  }, [location.pathname, waitForScroll]);
 
-  // Add scroll listener to ensure arrows don't reappear on scroll to top
+  // Rest of scroll listener logic
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY !== 0) {

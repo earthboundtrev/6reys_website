@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import Carousel from './Carousel';
 import VideoPlayer from './VideoPlayer';
+import { Link } from 'react-router-dom';
 
 const gameImages = [
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6R_s%20Photo%20(5%20of%2057).png", alt: "Hyper low-angled shot of arcade stick at 6R's entertainment yard" },
@@ -36,9 +37,9 @@ const gameImages = [
 
 export default function Games() {
   return (
-    <section id="games" className="py-20 bg-black text-white">
+    <section id="games" className="py-20 bg-[#0A1929] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16 bg-black-900">
+      <div className="text-center mb-16">
          <img src="https://i.imgur.com/xCmlmje.png" alt="6R's entertainment yard logo" className="mx-auto mb-4" />
       </div>
       
@@ -78,11 +79,32 @@ export default function Games() {
 
           <br/>
 
+          <p>
+             We have a ton of tickets and prizes for you to win as well! You can check out what we offer <Link 
+               to="/prizes" 
+               state={{ scrollToTop: true }} 
+               className="text-white font-semibold hover:underline"
+             >here!</Link>
+          </p>
+
+          <br/>
+
+          <p>
+            Do you have games, consoles, or peripherals to trade in? Learn about our trade in process <Link 
+              to="/tradeins" 
+              state={{ scrollToTop: true }} 
+              className="text-white font-semibold hover:underline"
+            >here!</Link>
+          </p>
+
+          <br/>
+
           <p>We even have air hockey and pinball!</p>
 
           <br/>
 
           <p>Don't just take my word for it! We've got some pictures that show you exactly what we mean below!</p>
+
           </div>
         </div>
         

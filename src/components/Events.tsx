@@ -8,7 +8,7 @@ export default function Events() {
   const handleClose = () => setSelectedImage(null);
 
   return (
-    <section id="events" className="py-20 bg-gradient-to-b from-black to-gray-900 text-white">
+    <section id="events" className="py-20 bg-[#0A1929] text-white">
       <NavigationArrow />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">

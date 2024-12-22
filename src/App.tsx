@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Games from './components/Games';
@@ -10,61 +10,60 @@ import PricingSection from './components/PricingSection';
 import Footer from './components/Footer';
 import Tradeins from './components/Tradeins';
 import Prizes from './components/Prizes';
+import { useScrollToTop } from './hooks/useScrollToTop';
 
 function App() {
+  useScrollToTop();
+  
   return (
-    <Router>
-      <div className="min-h-screen bg-black">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <PricingSection />
-              <Location />
-              <Footer />
-            </>
-          } />
-           <Route path="/games" element={
-            
-            <>
+    <div className="min-h-screen bg-black">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero />
+            <PricingSection />
+            <Location />
+            <Footer />
+          </>
+        } />
+        <Route path="/games" element={
+          <>
             <Navbar />
             <Games />
             <Footer />
           </>
         } />
-          <Route path="/parties" element={
-            
-            <>
+        <Route path="/parties" element={
+          <>
             <Navbar />
             <Parties />
             <Footer />
           </>
         } />
-          <Route path="/events" element={  
-            <>
+        <Route path="/events" element={
+          <>
             <Navbar />
             <Events />
             <Footer />
           </>
         } />
-        <Route path="/tradeins" element={  
-            <>
+        <Route path="/tradeins" element={
+          <>
             <Navbar />
-            <Tradeins/>
+            <Tradeins />
             <Footer />
           </>
         } />
-        <Route path="/prizes" element={  
-            <>
+        <Route path="/prizes" element={
+          <>
             <Navbar />
-            <Prizes/>
+            <Prizes />
             <Footer />
           </>
         } />
-        </Routes>
-      </div>
-    </Router>
+      </Routes>
+    </div>
   );
 }
 

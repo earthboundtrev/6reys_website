@@ -3,6 +3,9 @@ import { Gamepad2 } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import Carousel from './Carousel';
+import Games from './Games';
+import { Link, useLocation } from 'react-router-dom';
+import NavigationArrow from './NavigationArrow';
 
 const carouselImages = [
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/tickets_to_use_for_prizes.jpg", alt: "A bunch of tickets that someone will use for a prize at 6R's entertainment yard." },
@@ -23,61 +26,59 @@ const carouselImages = [
 ];
 
 export default function Prizes() {
+  const location = useLocation();
+  const needsScroll = location.state?.scrollToTop ?? false;
+
   return (
-    <section id="games" className="py-20 bg-black text-white">
+    <section id="games" className="py-20 bg-[#0A1929] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16 bg-black-900">
-         <img src="https://i.imgur.com/xCmlmje.png" alt="6R's entertainment yard logo" className="mx-auto mb-4" />
-      </div>
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-center">We have tickets and prizes!</h2>
-          <div className="text-gray-400 max-w-2xl mx-auto">
-           <p>
-            Do you like prizes? You can win them at 6R's! We have lots of exciting redemption games where you can earn tickets to trade in for awesome prizes.
-          </p>
-
-          <br/>
-
-          <p>
-            Try your luck at our <span className="text-white font-semibold">claw game</span>, <span className="text-white font-semibold">cyclone redemption game</span>, or shoot some hoops in <span className="text-white font-semibold">Hoop it Up</span> to earn tickets! 
-          </p>
-
-          <br/>
-
-          <p>
-            The more you play, the more tickets you can win.
-          </p>
-
-          <br/>
-
-          <p>
-            Once you've collected enough tickets, bring them to our prize counter where you can exchange them for a variety of fun prizes and goodies. We regularly update our prize selection to keep things fresh and exciting.
-          </p>
-
-          <br/>
-          
-          <p>
-            The prizes we offer can change depending on what we have in stock. Check out the carousel below to see examples of some of the awesome prizes we've featured in the past! From small trinkets to bigger items, there's something for everyone.
-          </p>
-
-          </div>
+        <div className="text-center mb-16">
+          <img src="https://i.imgur.com/xCmlmje.png" alt="6R's entertainment yard logo" className="mx-auto mb-4" />
         </div>
         
-        <div className="mb-16">
-          <Carousel images={carouselImages} />
-        </div>
+        <h2 className="text-4xl font-bold mb-8 text-center">We have tickets and prizes!</h2>
+        
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="lg:w-[50%] text-gray-400">
+            <p>
+              Do you like prizes? You can win them at 6R's! We have lots of exciting redemption games where you can earn tickets to trade in for awesome prizes.
+            </p>
 
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {games.map((game, index) => (
-            <div key={index} className="bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all">
-              <img src={game.image} alt={game.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{game.title}</h3>
-                <p className="text-gray-400">{game.cabinet}</p>
-              </div>
-            </div>
-          ))}
-        </div> */}
+            <br/>
+
+            <p>
+              Try your luck at our <span className="text-white font-semibold">claw game</span>, <span className="text-white font-semibold">cyclone redemption game</span>, or shoot some hoops in <span className="text-white font-semibold">Hoop it Up</span> to earn tickets! 
+            </p>
+
+            <br/>
+
+            <p>
+              The more you play, the more tickets you can win.
+            </p>
+
+            <br/>
+
+            <p>
+              Once you've collected enough tickets, bring them to our prize counter where you can exchange them for a variety of fun prizes and goodies. We regularly update our prize selection to keep things fresh and exciting.
+            </p>
+
+            <br/>
+            
+            <p>
+              The prizes we offer can change depending on what we have in stock. Check out the carousel to see examples of some of the awesome prizes we've featured in the past! From small trinkets to bigger items, there's something for everyone.
+            </p>
+
+            <br/>
+
+            <p>
+             We have a ton of games and videogames for you to play as well! You can check out what we offer <Link to="/games" className="text-white font-semibold hover:underline">here</Link>!
+            </p>
+          </div>
+
+          <div className="lg:w-[70%]">
+            <Carousel images={carouselImages} />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Carousel from './Carousel';
 import NavigationArrow from './NavigationArrow';
+import { useLocation } from 'react-router-dom';
 
 const Parties: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -255,6 +256,8 @@ const tradeinImages = [
 ];
 
 export default function Tradeins() {
+  const location = useLocation();
+  const needsScroll = location.state?.scrollToTop ?? false;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -354,35 +357,41 @@ export default function Tradeins() {
   };
 
   return (
-    <section id="games" className="py-20 bg-black text-white">
-      <NavigationArrow />
+    <section id="games" className="py-20 bg-[#0A1929] text-white">
+      <NavigationArrow waitForScroll={needsScroll} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className=" mb-16">
-          <img src="https://i.imgur.com/6XkhKhy.png" alt="Trade-In Chicken" className="mx-auto mb-4" />
-          <h2 className="text-4xl font-bold mb-4 text-center">Featured Games Available for Purchase</h2>
-          <div className="text-gray-400 max-w-2xl mx-auto mb-6">
+        <img src="https://i.imgur.com/6XkhKhy.png" alt="Trade-In Chicken" className="mx-auto mb-4" />
+        <h2 className="text-4xl font-bold mb-8 text-center">Featured Games Available for Purchase</h2>
+        
+        <div className="flex flex-col lg:flex-row gap-8 mb-16">
+          {/* Text Content - 30% */}
+          <div className="lg:w-[50%] text-gray-400">
             <p>
               Browse our extensive collection of games available for purchase, or bring in your own titles to trade. 
-          </p>
-           
-          <br/>
-          <p>
-            Exchange your games for something new from our shelves or opt for store credit – the choice is yours!
-          </p>
+            </p>
+            <br/>
+            <p>
+              Exchange your games for something new from our shelves or opt for store credit – the choice is yours!
+            </p>
+            <br/>
+            <p>
+              If you have consoles you want to trade, that's something you can do as well! We take consoles as old as the Atari 2600 to consoles as new as the PS5! Like with games, you can either trade them in for store credit or exchange them for something new.
+            </p>
+            <br/>
+            <p>
+              We also take console peripherals! Do you have a Wii Fit board you want to trade in? Do you have a full Rock Band instrument set, or even just a microphone? Bring them in and see what they're worth!
+            </p>
+            <br/>
+            <p>
+              Disclaimer: All of the items shown in the carousel aren't necessarily still at the arcade, but all of these items are examples of ones that have come into the arcade via trade-in.
+            </p>
+          </div>
 
-          <br/>
-
-          <p>
-            Disclaimer: All of the games shown in the carousel below aren't necessarily still at the arcade, but all of these games are examples of ones that have come into the arcade via trade-in.
-          </p>
-          
+          {/* Carousel - 70% */}
+          <div className="lg:w-[70%]">
+            <Carousel images={tradeinImages} />
           </div>
         </div>
-        
-        <div className="mb-16">
-          <Carousel images={tradeinImages} />
-        </div>
-
       </div>
 
       <div className="max-w-3xl mx-auto px-4 mt-16">
