@@ -106,7 +106,7 @@ const Parties: React.FC = () => {
         <NavigationArrow />
         <div className="text-center mb-16">
            <img src="https://i.imgur.com/JSwNL0C.png" alt="Event Chicken" className="mx-auto mb-4" />
-           <h2 className="text-4xl font-bold mb-4 text-center">Have your party at 6Rs!</h2>
+           <h2 className="text-4xl font-bold mb-4 text-center">Have your party at 6R's!</h2>
         </div>
 
         <div className="text-gray-300 space-y-6 mb-12">
