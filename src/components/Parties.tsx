@@ -100,6 +100,13 @@ const Parties: React.FC = () => {
     });
   };
 
+  // Add new CSS class for error state
+  const inputClassName = (fieldName: string) => `
+    w-full px-4 py-2 rounded-md bg-slate-800 border 
+    ${errors[fieldName] ? 'border-red-500' : 'border-slate-700'} 
+    text-white focus:outline-none focus:border-pink-500
+  `;
+
   return (
     <div className="min-h-screen bg-[#0A1929]">
       <div className="max-w-3xl mx-auto px-4 py-12">
@@ -145,7 +152,7 @@ const Parties: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
-                First Name *
+                First Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -153,7 +160,7 @@ const Parties: React.FC = () => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+                className={inputClassName('firstName')}
                 required
               />
               {errors.firstName && <p className="mt-1 text-sm text-red-500">{errors.firstName}</p>}
@@ -161,7 +168,7 @@ const Parties: React.FC = () => {
 
             <div>
               <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
-                Last Name *
+                Last Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -169,7 +176,7 @@ const Parties: React.FC = () => {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+                className={inputClassName('lastName')}
                 required
               />
               {errors.lastName && <p className="mt-1 text-sm text-red-500">{errors.lastName}</p>}
@@ -178,7 +185,7 @@ const Parties: React.FC = () => {
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-              Email Address *
+              Email Address <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
@@ -186,7 +193,7 @@ const Parties: React.FC = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+              className={inputClassName('email')}
               required
             />
             {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
@@ -194,7 +201,7 @@ const Parties: React.FC = () => {
 
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-              Phone Number *
+              Phone Number <span className="text-red-500">*</span>
             </label>
             <input
               type="tel"
@@ -203,7 +210,7 @@ const Parties: React.FC = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="123-456-7890"
-              className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+              className={inputClassName('phone')}
               required
             />
             {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
@@ -211,7 +218,7 @@ const Parties: React.FC = () => {
 
           <div>
             <label htmlFor="partyDetails" className="block text-sm font-medium text-gray-300 mb-2">
-              Party Details *
+              Party Details <span className="text-red-500">*</span>
             </label>
             <textarea
               id="partyDetails"

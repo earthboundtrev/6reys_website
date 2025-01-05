@@ -147,7 +147,7 @@ const Parties: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
-              First Name *
+              First Name <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -155,7 +155,9 @@ const Parties: React.FC = () => {
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+              className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+                errors.firstName ? 'border-red-500' : 'border-slate-700'
+              } text-white focus:outline-none focus:border-pink-500`}
               required
             />
             {errors.firstName && <p className="mt-1 text-sm text-red-500">{errors.firstName}</p>}
@@ -163,7 +165,7 @@ const Parties: React.FC = () => {
 
           <div>
             <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
-              Last Name *
+              Last Name <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -171,7 +173,9 @@ const Parties: React.FC = () => {
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+              className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+                errors.lastName ? 'border-red-500' : 'border-slate-700'
+              } text-white focus:outline-none focus:border-pink-500`}
               required
             />
             {errors.lastName && <p className="mt-1 text-sm text-red-500">{errors.lastName}</p>}
@@ -180,7 +184,7 @@ const Parties: React.FC = () => {
 
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-            Email Address *
+            Email Address <span className="text-red-500">*</span>
           </label>
           <input
             type="email"
@@ -188,7 +192,9 @@ const Parties: React.FC = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+            className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+              errors.email ? 'border-red-500' : 'border-slate-700'
+            } text-white focus:outline-none focus:border-pink-500`}
             required
           />
           {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
@@ -196,7 +202,7 @@ const Parties: React.FC = () => {
 
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-            Phone Number *
+            Phone Number <span className="text-red-500">*</span>
           </label>
           <input
             type="tel"
@@ -205,7 +211,9 @@ const Parties: React.FC = () => {
             value={formData.phone}
             onChange={handleChange}
             placeholder="123-456-7890"
-            className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+            className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+              errors.phone ? 'border-red-500' : 'border-slate-700'
+            } text-white focus:outline-none focus:border-pink-500`}
             required
           />
           {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
@@ -213,7 +221,7 @@ const Parties: React.FC = () => {
 
         <div>
           <label htmlFor="tradeinDetails" className="block text-sm font-medium text-gray-300 mb-2">
-            Party Details *
+            Party Details <span className="text-red-500">*</span>
           </label>
           <textarea
             id="tradeinDetails"
@@ -221,7 +229,9 @@ const Parties: React.FC = () => {
             value={formData.tradeinDetails}
             onChange={handleChange}
             rows={4}
-            className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+            className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+              errors.tradeinDetails ? 'border-red-500' : 'border-slate-700'
+            } text-white focus:outline-none focus:border-pink-500`}
             placeholder="Please provide details about the games, handhelds, or consoles you are looking for, or the games, handhelds, or consoles you would like to trade (name, name of console or handheld, damage, special requests, etc.)"
             required
           />
@@ -401,7 +411,7 @@ export default function Tradeins() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
-                First Name *
+                First Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -409,7 +419,9 @@ export default function Tradeins() {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+                className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+                  errors.firstName ? 'border-red-500' : 'border-slate-700'
+                } text-white focus:outline-none focus:border-pink-500`}
                 required
               />
               {errors.firstName && <p className="mt-1 text-sm text-red-500">{errors.firstName}</p>}
@@ -417,7 +429,7 @@ export default function Tradeins() {
 
             <div>
               <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
-                Last Name *
+                Last Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -425,7 +437,9 @@ export default function Tradeins() {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+                className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+                  errors.lastName ? 'border-red-500' : 'border-slate-700'
+                } text-white focus:outline-none focus:border-pink-500`}
                 required
               />
               {errors.lastName && <p className="mt-1 text-sm text-red-500">{errors.lastName}</p>}
@@ -434,7 +448,7 @@ export default function Tradeins() {
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-              Email Address *
+              Email Address <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
@@ -442,7 +456,9 @@ export default function Tradeins() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+              className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+                errors.email ? 'border-red-500' : 'border-slate-700'
+              } text-white focus:outline-none focus:border-pink-500`}
               required
             />
             {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
@@ -450,7 +466,7 @@ export default function Tradeins() {
 
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-              Phone Number *
+              Phone Number <span className="text-red-500">*</span>
             </label>
             <input
               type="tel"
@@ -459,7 +475,9 @@ export default function Tradeins() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="123-456-7890"
-              className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+              className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+                errors.phone ? 'border-red-500' : 'border-slate-700'
+              } text-white focus:outline-none focus:border-pink-500`}
               required
             />
             {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
@@ -467,7 +485,7 @@ export default function Tradeins() {
 
           <div>
             <label htmlFor="tradeinDetails" className="block text-sm font-medium text-gray-300 mb-2">
-              Party Details *
+              Party Details <span className="text-red-500">*</span>
             </label>
             <textarea
               id="tradeinDetails"
@@ -475,7 +493,9 @@ export default function Tradeins() {
               value={formData.tradeinDetails}
               onChange={handleChange}
               rows={4}
-              className="w-full px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
+              className={`w-full px-4 py-2 rounded-md bg-slate-800 border ${
+                errors.tradeinDetails ? 'border-red-500' : 'border-slate-700'
+              } text-white focus:outline-none focus:border-pink-500`}
               placeholder="Please provide details about the games, handhelds, or consoles you are looking for, or the games, handhelds, or consoles you would like to trade (name, name of console or handheld, damage, special requests, etc.)"
               required
             />
