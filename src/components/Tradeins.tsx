@@ -263,6 +263,10 @@ const tradeinImages = [
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/426226505_352394054377817_5228130841509951101_n.jpg", alt: "Persona, Final Fantasy, Mario, Sonic and Zelda being traded into 6R's entertainment yard." },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/419678725_334406189509937_807479287255226743_n.jpg", alt: "A bunch of Nintendo Entertainment System games and Nintendo 64 games being traded into 6R's entertainment yard." },
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/404554988_303722489244974_638050161365395662_n.jpg", alt: "Gamecube controller, Gamecube games, and Nintendo 64 game being traded into 6R's entertainment yard." },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/N64_etc_tradein_20241222_143821.jpg", alt: "PS2 games, PS2 controllers, PS2 console, and Nintendo 64 console being traded into 6R's entertainment yard." },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/PSVR_tradein_20241222_171356.jpg", alt: "PSVR tradein, Akai Katana skinned Xbox 360, normal Xbox 360, and MW2 skinned Xbox 360 traded into 6R's entertainment yard. The PSVR just came in!" },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/xbone_tradein_20241222_154705.jpg", alt: "Xbox One console with controller traded into 6R's entertainment yard." },
+  { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/pokemon_xd_gamecube_with_controllers_tradein.jpg", alt: "Pokemon XD themed Gamecube with controllers traded into 6R's entertainment yard" }
 ];
 
 export default function Tradeins() {
