@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import Carousel from './Carousel';
 import NavigationArrow from './NavigationArrow';
 import { useLocation } from 'react-router-dom';
+import { init } from '@emailjs/browser';
 
 const Parties: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -300,6 +301,14 @@ export default function Tradeins() {
     return () => clearInterval(timer);
   }, []); // Empty dependency array means this effect runs once on mount
 
+  React.useEffect(() => {
+    try {
+      init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    } catch (error) {
+      console.error('EmailJS initialization failed');
+    }
+  }, []);
+
   const validateForm = () => {
     let isValid = true;
     const newErrors = {
@@ -346,13 +355,13 @@ export default function Tradeins() {
         };
 
         await emailjs.send(
-          'YOUR_SERVICE_ID',
-          'YOUR_TEMPLATE_ID',
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
           templateParams,
-          'YOUR_PUBLIC_KEY'
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
 
-        alert('Thank you for your request! We will contact you soon.');
+        alert('Thank you for your trade-in request! We will contact you soon.');
         setFormData({
           firstName: '',
           lastName: '',
@@ -361,7 +370,7 @@ export default function Tradeins() {
           tradeinDetails: ''
         });
       } catch (error) {
-        console.error('Error sending email:', error);
+        console.error('Failed to send email');
         alert('Sorry, there was an error sending your request. Please try again or contact us directly.');
       }
     }
