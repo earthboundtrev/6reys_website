@@ -20,7 +20,8 @@ const Parties: React.FC = () => {
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    tradeinDetails: ''
   });
 
   const validateForm = () => {
@@ -29,7 +30,8 @@ const Parties: React.FC = () => {
       firstName: '',
       lastName: '',
       email: '',
-      phone: ''
+      phone: '',
+      tradeinDetails: ''
     };
 
     // First Name validation
@@ -285,7 +287,8 @@ export default function Tradeins() {
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    tradeinDetails: ''
   });
 
   React.useEffect(() => {
@@ -303,7 +306,8 @@ export default function Tradeins() {
       firstName: '',
       lastName: '',
       email: '',
-      phone: ''
+      phone: '',
+      tradeinDetails: ''
     };
 
     if (!formData.firstName.trim()) {
