@@ -21,7 +21,17 @@ const Parties: React.FC = () => {
   });
 
   useEffect(() => {
-    init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    console.log('Initializing EmailJS with public key:', {
+      publicKeyExists: !!import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      publicKeyLength: import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.length
+    });
+    
+    try {
+      init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+      console.log('EmailJS initialized successfully');
+    } catch (error) {
+      console.error('Failed to initialize EmailJS:', error);
+    }
   }, []);
 
   const validateForm = () => {
@@ -74,10 +84,16 @@ const Parties: React.FC = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        console.log('Environment Variables Status:', {
-          serviceId: !!import.meta.env.VITE_EMAILJS_SERVICE_ID,
-          templateId: !!import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          publicKey: !!import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        console.log('Attempting to send email with configuration:', {
+          serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.substring(0, 4) + '...',
+          formData: {
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+            phone: formData.phone,
+            hasPartyDetails: !!formData.partyDetails
+          }
         });
 
         const templateParams = {
