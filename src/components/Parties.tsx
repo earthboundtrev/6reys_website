@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import NavigationArrow from './NavigationArrow';
+import { init } from '@emailjs/browser';
 
 const Parties: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -11,20 +12,26 @@ const Parties: React.FC = () => {
     partyDetails: ''
   });
 
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<Record<keyof typeof formData, string>>({
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    partyDetails: ''
   });
+
+  useEffect(() => {
+    init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const validateForm = () => {
     let isValid = true;
-    const newErrors = {
+    const newErrors: Record<keyof typeof formData, string> = {
       firstName: '',
       lastName: '',
       email: '',
-      phone: ''
+      phone: '',
+      partyDetails: ''
     };
 
     // First Name validation
@@ -53,6 +60,12 @@ const Parties: React.FC = () => {
       isValid = false;
     }
 
+    // Add partyDetails validation
+    if (!formData.partyDetails.trim()) {
+      newErrors.partyDetails = 'Party details are required';
+      isValid = false;
+    }
+
     setErrors(newErrors);
     return isValid;
   };
@@ -61,6 +74,12 @@ const Parties: React.FC = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
+        console.log('Environment Variables Status:', {
+          serviceId: !!import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          templateId: !!import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          publicKey: !!import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        });
+
         const templateParams = {
           to_email: 'SixREYS@outlook.com',
           from_name: `${formData.firstName} ${formData.lastName}`,
@@ -70,10 +89,10 @@ const Parties: React.FC = () => {
         };
 
         await emailjs.send(
-          'YOUR_SERVICE_ID', // Get this from EmailJS dashboard
-          'YOUR_TEMPLATE_ID', // Get this from EmailJS dashboard
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
           templateParams,
-          'YOUR_PUBLIC_KEY' // Get this from EmailJS dashboard
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
 
         alert('Thank you for your party request! We will contact you soon.');
@@ -87,7 +106,7 @@ const Parties: React.FC = () => {
           partyDetails: ''
         });
       } catch (error) {
-        console.error('Error sending email:', error);
+        console.error('Error details:', error);
         alert('Sorry, there was an error sending your request. Please try again or contact us directly.');
       }
     }
@@ -100,8 +119,8 @@ const Parties: React.FC = () => {
     });
   };
 
-  // Add new CSS class for error state
-  const inputClassName = (fieldName: string) => `
+  // Fix type error in inputClassName function
+  const inputClassName = (fieldName: keyof typeof formData) => `
     w-full px-4 py-2 rounded-md bg-slate-800 border 
     ${errors[fieldName] ? 'border-red-500' : 'border-slate-700'} 
     text-white focus:outline-none focus:border-pink-500
