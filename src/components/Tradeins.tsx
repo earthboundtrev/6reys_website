@@ -72,7 +72,7 @@ const Parties: React.FC = () => {
         const templateParams = {
           to_email: 'SixREYS@outlook.com',
           from_name: `${formData.firstName} ${formData.lastName}`,
-          from_email: formData.email,
+          reply_to: formData.email,
           phone: formData.phone,
           message: formData.tradeinDetails
         };
@@ -349,7 +349,7 @@ export default function Tradeins() {
         const templateParams = {
           to_email: 'SixREYS@outlook.com',
           from_name: `${formData.firstName} ${formData.lastName}`,
-          from_email: formData.email,
+          reply_to: formData.email,
           phone: formData.phone,
           message: formData.tradeinDetails
         };

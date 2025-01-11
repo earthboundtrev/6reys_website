@@ -21,17 +21,11 @@ const Parties: React.FC = () => {
   });
 
   useEffect(() => {
-    const initEmailJS = async () => {
-      try {
-        await init({
-          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-        });
-      } catch (error) {
-        console.error('EmailJS initialization failed');
-      }
-    };
-
-    initEmailJS();
+    try {
+      init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    } catch (error) {
+      console.error('Failed to initialize EmailJS');
+    }
   }, []);
 
   const validateForm = () => {
@@ -82,23 +76,26 @@ const Parties: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateForm()) return;
-
-    try {
-      const response = await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
+    if (validateForm()) {
+      try {
+        const templateParams = {
           to_email: 'SixREYS@outlook.com',
           from_name: `${formData.firstName} ${formData.lastName}`,
-          from_email: formData.email,
+          reply_to: formData.email,
           phone: formData.phone,
           message: formData.partyDetails
-        }
-      );
+        };
 
-      if (response.status === 200) {
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          templateParams,
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+
         alert('Thank you for your party request! We will contact you soon.');
+        
+        // Clear form
         setFormData({
           firstName: '',
           lastName: '',
@@ -106,9 +103,10 @@ const Parties: React.FC = () => {
           phone: '',
           partyDetails: ''
         });
+      } catch (error) {
+        console.error('Failed to send email');
+        alert('Sorry, there was an error sending your request. Please try again or contact us directly.');
       }
-    } catch (error) {
-      alert('Sorry, there was an error sending your request. Please try again or contact us directly.');
     }
   };
 
