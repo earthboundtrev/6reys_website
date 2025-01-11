@@ -54,7 +54,7 @@ export default function Hero() {
             <div className="mt-16 sm:mt-24 lg:mt-0 lg:col-span-6">
               <div className="relative mx-auto w-full rounded-lg shadow-lg overflow-hidden">
                 <img
-                  src="https://i.imgur.com/xCmlmje.png"
+                  src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6_reys_logo.jpg"
                   alt="6reys Entertainment Yard logo"
                   className="w-full h-full object-cover rounded-lg"
                 />
