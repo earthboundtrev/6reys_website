@@ -32,7 +32,7 @@ export default function Events() {
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
               src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/december_calendar_caldendar_view.png"
-              alt="December Calendar" 
+              alt="January Calendar" 
               className="w-full h-full object-contain rounded-lg cursor-pointer"
               onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/december_calendar_caldendar_view.png")}
             />
@@ -41,7 +41,7 @@ export default function Events() {
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
               src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Reys-_Jan_2025_250101_183703.jpg"
-              alt="December Events" 
+              alt="January Events" 
               className="w-full h-auto rounded-lg cursor-pointer"
               onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Reys-_Jan_2025_250101_183703.jpg")}
             />

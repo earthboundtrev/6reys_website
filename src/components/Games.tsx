@@ -104,7 +104,7 @@ export default function Games() {
 
           <br/>
 
-          <p>Don't just take my word for it! We've got some pictures that show you exactly what we mean below!</p>
+          <p>Don't just take our word for it! We've got some pictures that show you exactly what we mean below!</p>
 
           </div>
         </div>
