@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://6rsentertainmentyard.com/sitemap.xml
+
+# Prevent crawling of any private or admin areas if you add them later
+# Disallow: /admin/
+# Disallow: /private/ 
