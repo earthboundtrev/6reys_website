@@ -36,7 +36,273 @@ const gameImages = [
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(31%20of%2057).png", alt: "Picture 6R banner explaining services offered at 6R's entertainment yard."},
 ];
 
+// Add this hardware images mapping
+const hardwareImages = {
+  Atomiswave: "Atomiswave_Logo.webp",
+  CSP1: "capcom_cps-1_logo.png",
+  CSP2: "cps2_logo.jpg",
+  CSP3: "CP_System_III_logo.png",
+  ES3: "namco_system_es3_logo.png",
+  F3: "taito_f3_logo.jpg",
+  Laserdisc: "lasderdisc_arcade_logo.webp",
+  Lindbergh: "sega_lindebergh_board_logo.png",
+  Naomi: "Sega_NAOMI_logo.png",
+  "Neo Geo MVS": "neogeo_logo.png"
+};
+
 export default function Games() {
+  const [selectedHardware, setSelectedHardware] = useState<string | null>(null);
+
+  // Game lists organized by hardware
+  const gamesByHardware = {
+    Atomiswave: [
+      "Animale Kaiser",
+      "Block Pong",
+      "Demolish Fist",
+      "Dolphin Blue",
+      "Extreme Hunting",
+      "Extreme Hunting 2",
+      "Fist of the North Star",
+      "Faster Than Speed",
+      "Guilty Gear Isuka",
+      "Guilty Gear X",
+      "Knights of Valour Seven Spirits",
+      "Maximum Speed",
+      "Metal Slug 6",
+      "Neo Geo Battle Coliseum",
+      "Ranger Mission",
+      "Rumble Fish",
+      "Rumble Fish 2",
+      "Samurai Shodown IV",
+      "Salary Man Kintaro",
+      "Sega Bass Fishing Challenge",
+      "Sega Clay Challenge",
+      "Sports Shooting USA",
+      "Sushi Bar",
+      "Yai Yai Drive"
+    ],
+    CSP1: [
+      "Adventure Quiz Capcom World 2",
+      "Captain Commando",
+      "Carrier Air Wing",
+      "Cyberbots",
+      "Dynasty Wars",
+      "Final Fight",
+      "Forgotten Worlds",
+      "Ghouls and Dinosaurs",
+      "Gunforce Marine Comm",
+      "Ghouls N' Ghosts",
+      "Knights of the Round",
+      "Lost Worlds",
+      "Magic Sword: Heroic Fantasy",
+      "Mega Man: The Power Battle",
+      "Mega Twins",
+      "Muscle Bomber Duo's Ultimate Team",
+      "Nemo",
+      "Pang! 3",
+      "Pnickies",
+      "Progear",
+      "Quiz & Dragons: Capcom Quiz Game",
+      "Quiz Tonosama no Yabou 2",
+      "Rainbow Edition",
+      "Saturday Night Slam Masters",
+      "Street Fighter II: Champion Edition",
+      "Street Fighter II: Champion Edition - Rainbow Edition",
+      "Street Fighter II: Hyper Fighting",
+      "Street Fighter II: The World Warrior",
+      "Strider",
+      "The King of Dragons",
+      "The Punisher",
+      "Three Wonders",
+      "U.N. Squadron",
+      "Varth",
+      "Warriors of Fate",
+      "Willow"
+    ],
+    CSP2: [
+      "1944: The Loop Master",
+      "1996: The War Against Destiny",
+      "Alien vs Predator",
+      "Armored Warriors",
+      "Battle Circuit",
+      "Capcom Sports Club",
+      "Cyberbots: Full Metal Madness",
+      "Darkstalkers: The Night Warriors",
+      "Dimahoo",
+      "Dungeons & Dragons: Tower of Doom",
+      "Dungeons & Dragons: Shadow Over Mystara",
+      "Eco Fighters",
+      "Gigawing",
+      "Hyper Street Fighter II: The Anniversary Edition",
+      "Jyangokushi: Haoh no Saihai",
+      "Japan Puzzle CHK",
+      "Mars Matrix",
+      "Marvel Super Heroes",
+      "Marvel Super Heroes vs Street Fighter",
+      "Marvel vs Capcom",
+      "Mega Man 2: The Power Fighters",
+      "Mega Man: The Power Battle",
+      "Mighty Guy",
+      "Night Warriors: Darkstalkers",
+      "Progear",
+      "Quiz Nanairo Dreams: Nijiirochou",
+      "Reverse",
+      "Ring of Destruction: Slammasters",
+      "Street Fighter Alpha",
+      "Street Fighter Alpha 2",
+      "Street Fighter Alpha 3",
+      "Super Gem Fighter mini mix",
+      "Super Puzzle Fighter II Turbo",
+      "Super Street Fighter II: New Challengers",
+      "Super Street Fighter II: Tournament Battle",
+      "Super Street Fighter II Turbo",
+      "Super Puzzle Fighter 2",
+      "Vampire Savior: The Lord of the Vampire",
+      "Vampire: Children of the Night",
+      "X-men vs Street Fighter"
+    ],
+    CSP3: [
+      "JoJo's Venture EU",
+      "JoJo's No Kimyou na Bouken JP",
+      "JoJo's Bizarre Adventure EU",
+      "Red Earth EX",
+      "Red Earth JP",
+      "Street Fighter III: New Generation EU",
+      "Street Fighter III: New Generation JP",
+      "Street Fighter III: 2nd Impact US",
+      "Street Fighter III 2nd Impact JP",
+      "Street Fighter III: 3rd Strike",
+      "Street Fighter III: 3rd Strike EN",
+      "Street Fighter III: 3rd Strike JP"
+    ],
+    ES3: [
+      "Lost Island Adventure",
+      "Lost Island Adventure Demo",
+      "Mario Kart Arcade GP DX",
+      "Mario Party",
+      "Pokken Tournament",
+      "Star Wars Battle Pod",
+      "Tekken 7 Fated Retribution",
+      "Tekken 7 Fated Retribution Round 2",
+      "Time Crisis 5",
+      "Vampire Night Arcade Time 5",
+      "Vampire Night Arcade Time 5"
+    ],
+    F3: [
+      "ABC Arabian Magic",
+      "Air Ranger Rescue",
+      "Bubble Memories",
+      "Bubble Memories: The Story of",
+      "Bubble Bobble III",
+      "Bubble Memories: The Story of",
+      "Bubble Bobble III Black Edition",
+      "Cleopatra Fortune",
+      "Gekirindan",
+      "Grid Seeker: Project Storm Hammer",
+      "Gunlock",
+      "In Tournament Cup 64",
+      "Kaiser Knuckle",
+      "Kirameki Star Road",
+      "Land Maker",
+      "Pop N' Pop",
+      "Puzzle Bobble 2",
+      "Puzzle Bobble 3",
+      "Puzzle Bobble 4",
+      "Prime Time Fighter",
+      "Puchi Carat",
+      "Space Invaders '95: Attack of the Lunar Loonies",
+      "Space Invaders DX",
+      "Super Cup Finals",
+      "Taito Cup Finals",
+      "Taito Super Seal",
+      "Top Force",
+      "Twin Cobra II",
+      "Twin Qix",
+      "Re-Seal RV",
+      "Ring Rage",
+      "Ring Rise"
+    ],
+    Laserdisc: [
+      "Action Desk",
+      "Badlands",
+      "Cliff Hanger",
+      "Cobra Command",
+      "Crime Patrol",
+      "Crime Patrol 2: Drug Wars",
+      "Dragon's Lair",
+      "Dragon's Lair II: Time Lord",
+      "ESP Rader",
+      "Galaxy Ranger",
+      "GP World",
+      "Interstellar",
+      "M.A.C.H. 3",
+      "Mad Dog McCree",
+      "Mad Dog II: The Lost Gold",
+      "Road Blaster",
+      "Space Ace",
+      "Space Pirates",
+      "Star Blazers: Space Combat",
+      "Super Don Quix-ote",
+      "Time Gal",
+      "Time Traveler",
+      "US vs Japan",
+      "Who Shot Johnny Rock?"
+    ],
+    Lindbergh: [
+      "After Burner Climax",
+      "Rampage Medley",
+      "Initial D Arcade Stage 4",
+      "Initial D Arcade Stage 4 EX",
+      "Let's Go Jungle: Lost on the Island",
+      "Island of Spirit",
+      "Let's Go Jungle Special",
+      "Rampage 2: Special Tours Deluxe",
+      "Rampage 4: Ultimate Street",
+      "Sega Race TV",
+      "Star Trek: Voyager The Arcade",
+      "Secuna",
+      "Pop Splash",
+      "Virtual Fighter 5 Rev C",
+      "Virtua Tennis 3"
+    ],
+    Naomi: [
+      "Capcom vs SNK 2",
+      "Dynamite",
+      "Marvel vs Capcom 2",
+      "Marvel vs Capcom 2 ENG",
+      "Power Stone",
+      "Power Stone 2",
+      "Virtua Tennis 2",
+      "Zero Gunner 2"
+    ],
+    "Neo Geo MVS": [
+      "2020 Super Baseball",
+      "3 Count Bout",
+      "Art of Fighting",
+      "Art of Fighting 2",
+      "Art of Fighting 3: The Path of the Warrior",
+      "Baseball Stars 2",
+      "Baseball Stars Professional",
+      "Battle Flip Shot",
+      "Blazing Star",
+      "Blues Journey",
+      "Breakers",
+      "Breakers Revenge",
+      "Burning Fight",
+      "Captain Tomaday",
+      "Chibi Maruko-Chan: Marukochan",
+      "Crossed Swords",
+      "Crossed Swords 2",
+      "Cyber Lip",
+      "Cyber Cup",
+      "Fatal Fury: King of Fighters",
+      "Fatal Fury 2",
+      "Fatal Fury 3 Road",
+      "Fight Man",
+      "Far East of Eden -Kabuki Klash"
+    ]
+  };
+
   return (
     <section id="games" className="py-20 bg-[#0A1929] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,6 +378,66 @@ export default function Games() {
         <div className="mb-16">
           <Carousel images={gameImages} />
         </div>
+
+        {/* Hardware Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            Explore Our Complete Arcade Collection
+          </h2>
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {Object.entries(gamesByHardware).map(([hardware, games]) => (
+              <div key={hardware} className="flex flex-col">
+                <button 
+                  className={`transition-colors p-6 rounded-lg w-full h-[120px] flex items-center justify-center
+                    ${selectedHardware === hardware ? 'bg-pink-500' : 'bg-gray-800 hover:bg-pink-500'}`}
+                  onClick={() => setSelectedHardware(selectedHardware === hardware ? null : hardware)}
+                >
+                  <img 
+                    src={`https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/${hardwareImages[hardware]}`}
+                    alt={hardware}
+                    className="max-h-[80px] w-auto object-contain"
+                  />
+                </button>
+                
+                {/* Mobile Game List - Shows directly under each button */}
+                {selectedHardware === hardware && (
+                  <div className="md:hidden mt-4 bg-gray-800 rounded-lg p-4">
+                    <h3 className="text-xl font-bold mb-2">{hardware} Games</h3>
+                    <ul className="space-y-1">
+                      {games.map((game) => (
+                        <li key={game} className="text-gray-300 hover:text-white">
+                          • {game}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Game List Section - Shows below all buttons */}
+        {selectedHardware && (
+          <div className="hidden md:block mt-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4 text-center">
+              {selectedHardware} Games
+            </h3>
+            <div className="bg-gray-800 rounded-lg p-6">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {gamesByHardware[selectedHardware]?.map((game) => (
+                  <li key={game} className="text-gray-300 hover:text-white">
+                    • {game}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
