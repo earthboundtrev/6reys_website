@@ -387,6 +387,10 @@ export default function Games() {
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
             Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform.
           </p>
+
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            Want to know exactly what games we have? Check out our hardware platforms below! Each one is packed with classics and hidden gems - just click on any platform that catches your eye and we'll show you every single game we've got running on it. From Neo Geo fighting games to Laserdisc adventures, we've got something for everyone!
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {Object.entries(gamesByHardware).map(([hardware, games]) => (
