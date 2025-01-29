@@ -325,22 +325,8 @@ export default function Games() {
                 <br/>
 
                 <p>
-                  How much do we love videogames? We love them so much that we've assembled a great collection of arcade cabinets, modern consoles, and arcade and console games for you to play with. We like to share here at 6R's.
+                  How much do we love videogames? We love them so much that we've assembled a great collection of arcade cabinets, modern consoles, and arcade and console games for you to play with.
                 </p>
-
-                <br/>
-
-                <p>What exactly are we sharing with you? Classic arcade games like Missile Command, Mortal Kombat, and Pac Man for starters! We've got dedicated machines for NBA Jam, NFL Blitz, and the niche classic Outzone if you're into shooting games.</p>
-
-                <br/>
-                
-                <p>
-                  We have a ton of dedicated racing arcade cabinets! Do you want to drive a car? We've got Daytona USA, San Francisco Rush: Extreme Racing, Sega Super GT, and Crazy Taxi for that! Do you want to ride a motorcycle? You can do that with Suzuka 8 Hours. Do you want to fight in a Star War? We've got a dedicated cabinet for that. Do you want to be a Ninja Turtle? We've got a dedicated arcade cabinet for that too!  
-                </p>
-
-                <br/>
-
-                <p>Our real variety comes with our multi-game cabinet systems. We have an authentic retro Neo Geo MVS cabinet that is loaded with different fighting, sports, sidescrollers, puzzle games, brawlers, or shooting games. We also have TWO newer and linked Lindbergh Universal Cabinets that are able to play classic games that you remember from the 1980's but can also load games that came out as recently as two or five years ago in arcades in the East! If you would like to know more about the games that are loaded on these two machines or would like to change them, ask at the front desk, and they will see what they can do for you. </p>
 
                 <br/>
 
