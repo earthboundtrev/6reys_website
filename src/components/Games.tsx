@@ -312,71 +312,70 @@ export default function Games() {
       
         <div className="mb-16">
           <h2 className="text-4xl font-bold mb-4 text-center">Featured Arcade Games and Cabinets</h2>
-          <div className="text-gray-400 max-w-2xl mx-auto">
-           <p>
-            We love videogames here at 6R's!
-          </p>
-
-          <br/>
-
-          <p>
-            How much do we love videogames? We love them so much that we've assembled a great collection of arcade cabinets, modern consoles, and arcade and console games for you to play with. We like to share here at 6R's.
-          </p>
-
-          <br/>
-
-          <br/>
-
-          {/* <VideoPlayer 
-           videoUrl="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/20241201_184257.mp4"
-           title="Video Title"
-           /> */}
-
-          <p>What exactly are we sharing with you? Classic arcade games like Missile Command, Mortal Kombat, and Pac Man for starters! We've got dedicated machines for NBA Jam, NFL Blitz, and the niche classic Outzone if you're into shooting games.</p>
-
-          <br/>
           
-          <p>
-            We have a ton of dedicated racing arcade cabinets! Do you want to drive a car? We've got Daytona USA, San Francisco Rush: Extreme Racing, Sega Super GT, and Crazy Taxi for that! Do you want to ride a motorcycle? You can do that with Suzuka 8 Hours. Do you want to fight in a Star War? We've got a dedicated cabinet for that. Do you want to be a Ninja Turtle? We've got a dedicated arcade cabinet for that too!  
-          </p>
+          {/* New flex container for side-by-side layout */}
+          <div className="flex flex-col md:flex-row md:gap-8">
+            {/* Text content - 40% width on desktop/tablet */}
+            <div className="md:w-[40%] mb-8 md:mb-0">
+              <div className="text-gray-400">
+                <p>
+                  We love videogames here at 6R's! Don't just take our word for it! We've got some pictures that show you exactly what we mean!
+                </p>
 
-          <br/>
+                <br/>
 
-          <p>Our real variety comes with our multi-game cabinet systems. We have an authentic retro Neo Geo MVS cabinet that is loaded with different fighting, sports, sidescrollers, puzzle games, brawlers, or shooting games. We also have TWO newer and linked Lindbergh Universal Cabinets that are able to play classic games that you remember from the 1980's but can also load games that came out as recently as two or five years ago in arcades in the East! If you would like to know more about the games that are loaded on these two machines or would like to change them, ask at the front desk, and they will see what they can do for you. </p>
+                <p>
+                  How much do we love videogames? We love them so much that we've assembled a great collection of arcade cabinets, modern consoles, and arcade and console games for you to play with. We like to share here at 6R's.
+                </p>
 
-          <br/>
+                <br/>
 
-          <p>
-             We have a ton of tickets and prizes for you to win as well! You can check out what we offer <Link 
-               to="/prizes" 
-               state={{ scrollToTop: true }} 
-               className="text-white font-semibold hover:underline"
-             >here!</Link>
-          </p>
+                <p>What exactly are we sharing with you? Classic arcade games like Missile Command, Mortal Kombat, and Pac Man for starters! We've got dedicated machines for NBA Jam, NFL Blitz, and the niche classic Outzone if you're into shooting games.</p>
 
-          <br/>
+                <br/>
+                
+                <p>
+                  We have a ton of dedicated racing arcade cabinets! Do you want to drive a car? We've got Daytona USA, San Francisco Rush: Extreme Racing, Sega Super GT, and Crazy Taxi for that! Do you want to ride a motorcycle? You can do that with Suzuka 8 Hours. Do you want to fight in a Star War? We've got a dedicated cabinet for that. Do you want to be a Ninja Turtle? We've got a dedicated arcade cabinet for that too!  
+                </p>
 
-          <p>
-            Do you have games, consoles, or peripherals to trade in? Learn about our trade in process <Link 
-              to="/tradeins" 
-              state={{ scrollToTop: true }} 
-              className="text-white font-semibold hover:underline"
-            >here!</Link>
-          </p>
+                <br/>
 
-          <br/>
+                <p>Our real variety comes with our multi-game cabinet systems. We have an authentic retro Neo Geo MVS cabinet that is loaded with different fighting, sports, sidescrollers, puzzle games, brawlers, or shooting games. We also have TWO newer and linked Lindbergh Universal Cabinets that are able to play classic games that you remember from the 1980's but can also load games that came out as recently as two or five years ago in arcades in the East! If you would like to know more about the games that are loaded on these two machines or would like to change them, ask at the front desk, and they will see what they can do for you. </p>
 
-          <p>We even have air hockey and pinball!</p>
+                <br/>
 
-          <br/>
+                <p>We even have air hockey and pinball!</p>
 
-          <p>Don't just take our word for it! We've got some pictures that show you exactly what we mean below!</p>
+                <br/>
 
+                <p>
+                   We also have a ton of tickets and prizes for you to win as well! You can check out what we offer <Link 
+                     to="/prizes" 
+                     state={{ scrollToTop: true }} 
+                     className="text-white font-semibold hover:underline"
+                   >here!</Link>
+                </p>
+
+                <br/>
+
+                <p>
+                  Do you have games, consoles, or peripherals to trade in? Learn about our trade in process <Link 
+                    to="/tradeins" 
+                    state={{ scrollToTop: true }} 
+                    className="text-white font-semibold hover:underline"
+                  >here!</Link>
+                </p>
+
+                <br/>
+
+              </div>
+            </div>
+
+            {/* Carousel - 60% width on desktop/tablet */}
+            <div className="md:w-[60%]">
+              <Carousel images={gameImages} />
+            </div>
           </div>
-        </div>
-        
-        <div className="mb-16">
-          <Carousel images={gameImages} />
         </div>
 
         {/* New decorative divider */}
