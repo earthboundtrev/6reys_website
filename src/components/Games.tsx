@@ -377,6 +377,11 @@ export default function Games() {
             Explore Our Complete Arcade Collection
           </h2>
           
+          {/* Mobile-only text placement */}
+          <p className="text-gray-400 mb-12 md:hidden">
+            Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform.
+          </p>
+
           {/* New flex container for side-by-side layout */}
           <div className="flex flex-col md:flex-row md:gap-8 md:items-start">
             {/* Hardware buttons - now on the left side */}
@@ -416,11 +421,12 @@ export default function Games() {
 
             {/* Text content and game list - now on the right side */}
             <div className="md:w-1/2">
-              <p className="text-gray-400 mb-12 max-w-2xl mx-auto md:mx-0">
+              {/* Desktop/tablet-only text placement */}
+              <p className="text-gray-400 mb-12 max-w-2xl mx-auto md:mx-0 hidden md:block">
                 Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform.
               </p>
 
-              {/* Desktop Game List Section - moved here */}
+              {/* Desktop Game List Section */}
               {selectedHardware && (
                 <div className="hidden md:block">
                   <h3 className="text-2xl font-bold mb-4">
