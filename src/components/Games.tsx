@@ -379,69 +379,82 @@ export default function Games() {
           <Carousel images={gameImages} />
         </div>
 
+        {/* New decorative divider */}
+        <div className="flex items-center justify-center mb-16">
+          <div className="h-px bg-pink-500 w-24 md:w-48"></div>
+          <Gamepad2 className="mx-4 w-8 h-8 text-pink-500" />
+          <div className="h-px bg-pink-500 w-24 md:w-48"></div>
+        </div>
+
         {/* Hardware Section */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center">
             Explore Our Complete Arcade Collection
           </h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform.
-          </p>
-
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Want to know exactly what games we have? Check out our hardware platforms below! Each one is packed with classics and hidden gems - just click on any platform that catches your eye and we'll show you every single game we've got running on it. From Neo Geo fighting games to Laserdisc adventures, we've got something for everyone!
-          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {Object.entries(gamesByHardware).map(([hardware, games]) => (
-              <div key={hardware} className="flex flex-col">
-                <button 
-                  className={`transition-colors p-6 rounded-lg w-full h-[120px] flex items-center justify-center
-                    ${selectedHardware === hardware ? 'bg-pink-500' : 'bg-gray-800 hover:bg-pink-500'}`}
-                  onClick={() => setSelectedHardware(selectedHardware === hardware ? null : hardware)}
-                >
-                  <img 
-                    src={`https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/${hardwareImages[hardware]}`}
-                    alt={hardware}
-                    className="max-h-[80px] w-auto object-contain"
-                  />
-                </button>
-                
-                {/* Mobile Game List - Shows directly under each button */}
-                {selectedHardware === hardware && (
-                  <div className="md:hidden mt-4 bg-gray-800 rounded-lg p-4">
-                    <h3 className="text-xl font-bold mb-2">{hardware} Games</h3>
-                    <ul className="space-y-1">
-                      {games.map((game) => (
+          {/* New flex container for side-by-side layout */}
+          <div className="flex flex-col md:flex-row md:gap-8 md:items-start">
+            {/* Text content and game list - stacked on mobile, left side on tablet/desktop */}
+            <div className="md:w-1/2">
+              <p className="text-gray-400 mb-12 max-w-2xl mx-auto md:mx-0">
+                Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform by clicking on a icon on the right.
+              </p>
+
+              {/* Desktop Game List Section - moved here */}
+              {selectedHardware && (
+                <div className="hidden md:block">
+                  <h3 className="text-2xl font-bold mb-4">
+                    {selectedHardware} Games
+                  </h3>
+                  <div className="bg-gray-800 rounded-lg p-6">
+                    <ul className="grid grid-cols-1 gap-1 text-sm">
+                      {gamesByHardware[selectedHardware]?.map((game) => (
                         <li key={game} className="text-gray-300 hover:text-white">
                           • {game}
                         </li>
                       ))}
                     </ul>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+                </div>
+              )}
+            </div>
 
-        {/* Desktop Game List Section - Shows below all buttons */}
-        {selectedHardware && (
-          <div className="hidden md:block mt-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-center">
-              {selectedHardware} Games
-            </h3>
-            <div className="bg-gray-800 rounded-lg p-6">
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {gamesByHardware[selectedHardware]?.map((game) => (
-                  <li key={game} className="text-gray-300 hover:text-white">
-                    • {game}
-                  </li>
+            {/* Hardware buttons - full width on mobile, right side on tablet/desktop */}
+            <div className="md:w-1/2">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {Object.entries(gamesByHardware).map(([hardware, games]) => (
+                  <div key={hardware} className="flex flex-col">
+                    <button 
+                      className={`transition-colors p-6 rounded-lg w-full h-[120px] flex items-center justify-center
+                        ${selectedHardware === hardware ? 'bg-pink-500' : 'bg-gray-800 hover:bg-pink-500'}`}
+                      onClick={() => setSelectedHardware(selectedHardware === hardware ? null : hardware)}
+                    >
+                      <img 
+                        src={`https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/${hardwareImages[hardware]}`}
+                        alt={hardware}
+                        className="max-h-[80px] w-auto object-contain"
+                      />
+                    </button>
+                    
+                    {/* Mobile Game List - unchanged */}
+                    {selectedHardware === hardware && (
+                      <div className="md:hidden mt-4 bg-gray-800 rounded-lg p-4">
+                        <h3 className="text-xl font-bold mb-2">{hardware} Games</h3>
+                        <ul className="space-y-1">
+                          {games.map((game) => (
+                            <li key={game} className="text-gray-300 hover:text-white">
+                              • {game}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );
