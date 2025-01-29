@@ -379,32 +379,7 @@ export default function Games() {
           
           {/* New flex container for side-by-side layout */}
           <div className="flex flex-col md:flex-row md:gap-8 md:items-start">
-            {/* Text content and game list - stacked on mobile, left side on tablet/desktop */}
-            <div className="md:w-1/2">
-              <p className="text-gray-400 mb-12 max-w-2xl mx-auto md:mx-0">
-                Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform by clicking on a icon on the right.
-              </p>
-
-              {/* Desktop Game List Section - moved here */}
-              {selectedHardware && (
-                <div className="hidden md:block">
-                  <h3 className="text-2xl font-bold mb-4">
-                    {selectedHardware} Games
-                  </h3>
-                  <div className="bg-gray-800 rounded-lg p-6">
-                    <ul className="grid grid-cols-1 gap-1 text-sm">
-                      {gamesByHardware[selectedHardware]?.map((game) => (
-                        <li key={game} className="text-gray-300 hover:text-white">
-                          • {game}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Hardware buttons - full width on mobile, right side on tablet/desktop */}
+            {/* Hardware buttons - now on the left side */}
             <div className="md:w-1/2">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {Object.entries(gamesByHardware).map(([hardware, games]) => (
@@ -437,6 +412,31 @@ export default function Games() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Text content and game list - now on the right side */}
+            <div className="md:w-1/2">
+              <p className="text-gray-400 mb-12 max-w-2xl mx-auto md:mx-0">
+                Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform.
+              </p>
+
+              {/* Desktop Game List Section - moved here */}
+              {selectedHardware && (
+                <div className="hidden md:block">
+                  <h3 className="text-2xl font-bold mb-4">
+                    {selectedHardware} Games
+                  </h3>
+                  <div className="bg-gray-800 rounded-lg p-6">
+                    <ul className="grid grid-cols-1 gap-1 text-sm">
+                      {gamesByHardware[selectedHardware]?.map((game) => (
+                        <li key={game} className="text-gray-300 hover:text-white">
+                          • {game}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
