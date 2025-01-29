@@ -31,19 +31,19 @@ export default function Events() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
-              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/december_calendar_caldendar_view.png"
-              alt="January Calendar" 
+              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/feb_calendar_view.jpg"
+              alt="February Calendar" 
               className="w-full h-full object-contain rounded-lg cursor-pointer"
-              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/december_calendar_caldendar_view.png")}
+              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/feb_calendar_view.jpg")}
             />
           </div>
           
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
-              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Reys-_Jan_2025_250101_183703.jpg"
-              alt="January Events" 
+              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/feb_calendar_list.jpg"
+              alt="February Events" 
               className="w-full h-auto rounded-lg cursor-pointer"
-              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Reys-_Jan_2025_250101_183703.jpg")}
+              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/feb_calendar_list.jpg")}
             />
           </div>
         </div>
