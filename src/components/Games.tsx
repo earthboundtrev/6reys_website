@@ -379,7 +379,7 @@ export default function Games() {
           
           {/* Mobile-only text placement */}
           <p className="text-gray-400 mb-12 md:hidden">
-            Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform.
+            Dive deep into our extensive library of arcade titles. Clicking each of the buttons will allow you to browse through our complete collection organized by hardware platform.
           </p>
 
           {/* New flex container for side-by-side layout */}
