@@ -36,18 +36,17 @@ const gameImages = [
   { url: "https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6Rs%20Photo%20(31%20of%2057).png", alt: "Picture 6R banner explaining services offered at 6R's entertainment yard."},
 ];
 
-// Add this hardware images mapping
+// Remove Laserdisc from hardware images mapping
 const hardwareImages = {
   Atomiswave: "Atomiswave_Logo.webp",
-  CSP1: "capcom_cps-1_logo.png",
-  CSP2: "cps2_logo.jpg",
-  CSP3: "CP_System_III_logo.png",
+  CSP1: "Capcom%20CPS-1.png",
+  CSP2: "Capcom%20CPS-2.png",
+  CSP3: "Capcom%20CPS-3.png",
   ES3: "namco_system_es3_logo.png",
-  F3: "taito_f3_logo.jpg",
-  Laserdisc: "lasderdisc_arcade_logo.webp",
   Lindbergh: "sega_lindebergh_board_logo.png",
   Naomi: "Sega_NAOMI_logo.png",
-  "Neo Geo MVS": "neogeo_logo.png"
+  "Neo Geo MVS": "Neo%20Geo.png",
+  "Taito F3": "Taito.png"
 };
 
 export default function Games() {
@@ -188,66 +187,6 @@ export default function Games() {
       "Vampire Night Arcade Time 5",
       "Vampire Night Arcade Time 5"
     ],
-    F3: [
-      "ABC Arabian Magic",
-      "Air Ranger Rescue",
-      "Bubble Memories",
-      "Bubble Memories: The Story of",
-      "Bubble Bobble III",
-      "Bubble Memories: The Story of",
-      "Bubble Bobble III Black Edition",
-      "Cleopatra Fortune",
-      "Gekirindan",
-      "Grid Seeker: Project Storm Hammer",
-      "Gunlock",
-      "In Tournament Cup 64",
-      "Kaiser Knuckle",
-      "Kirameki Star Road",
-      "Land Maker",
-      "Pop N' Pop",
-      "Puzzle Bobble 2",
-      "Puzzle Bobble 3",
-      "Puzzle Bobble 4",
-      "Prime Time Fighter",
-      "Puchi Carat",
-      "Space Invaders '95: Attack of the Lunar Loonies",
-      "Space Invaders DX",
-      "Super Cup Finals",
-      "Taito Cup Finals",
-      "Taito Super Seal",
-      "Top Force",
-      "Twin Cobra II",
-      "Twin Qix",
-      "Re-Seal RV",
-      "Ring Rage",
-      "Ring Rise"
-    ],
-    Laserdisc: [
-      "Action Desk",
-      "Badlands",
-      "Cliff Hanger",
-      "Cobra Command",
-      "Crime Patrol",
-      "Crime Patrol 2: Drug Wars",
-      "Dragon's Lair",
-      "Dragon's Lair II: Time Lord",
-      "ESP Rader",
-      "Galaxy Ranger",
-      "GP World",
-      "Interstellar",
-      "M.A.C.H. 3",
-      "Mad Dog McCree",
-      "Mad Dog II: The Lost Gold",
-      "Road Blaster",
-      "Space Ace",
-      "Space Pirates",
-      "Star Blazers: Space Combat",
-      "Super Don Quix-ote",
-      "Time Gal",
-      "Time Traveler",
-      "US vs Japan",
-      "Who Shot Johnny Rock?"
-    ],
     Lindbergh: [
       "After Burner Climax",
       "Rampage Medley",
@@ -300,6 +239,40 @@ export default function Games() {
       "Fatal Fury 3 Road",
       "Fight Man",
       "Far East of Eden -Kabuki Klash"
+    ],
+    "Taito F3": [
+      "ABC Arabian Magic",
+      "Air Ranger Rescue",
+      "Bubble Memories",
+      "Bubble Memories: The Story of",
+      "Bubble Bobble III",
+      "Bubble Memories: The Story of",
+      "Bubble Bobble III Black Edition",
+      "Cleopatra Fortune",
+      "Gekirindan",
+      "Grid Seeker: Project Storm Hammer",
+      "Gunlock",
+      "In Tournament Cup 64",
+      "Kaiser Knuckle",
+      "Kirameki Star Road",
+      "Land Maker",
+      "Pop N' Pop",
+      "Puzzle Bobble 2",
+      "Puzzle Bobble 3",
+      "Puzzle Bobble 4",
+      "Prime Time Fighter",
+      "Puchi Carat",
+      "Space Invaders '95: Attack of the Lunar Loonies",
+      "Space Invaders DX",
+      "Super Cup Finals",
+      "Taito Cup Finals",
+      "Taito Super Seal",
+      "Top Force",
+      "Twin Cobra II",
+      "Twin Qix",
+      "Re-Seal RV",
+      "Ring Rage",
+      "Ring Rise"
     ]
   };
 
@@ -311,7 +284,7 @@ export default function Games() {
       </div>
       
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-center">Featured Arcade Games and Cabinets</h2>
+          <h2 className="text-4xl font-bold mb-4 text-center">Explore Our Game Collection</h2>
           
           {/* New flex container for side-by-side layout */}
           <div className="flex flex-col md:flex-row md:gap-8">
@@ -374,7 +347,7 @@ export default function Games() {
         {/* Hardware Section */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center">
-            Explore Our Complete Arcade Collection
+            Explore Our Complete Arcade Game Collection
           </h2>
           
           {/* Mobile-only text placement */}
@@ -401,10 +374,12 @@ export default function Games() {
                       />
                     </button>
                     
-                    {/* Mobile Game List - unchanged */}
+                    {/* Mobile Game List */}
                     {selectedHardware === hardware && (
                       <div className="md:hidden mt-4 bg-gray-800 rounded-lg p-4">
-                        <h3 className="text-xl font-bold mb-2">{hardware} Games</h3>
+                        <h3 className="text-xl font-bold mb-2">
+                          {hardware === "Taito F3" ? "Taito F3 Games" : `${hardware} Games`}
+                        </h3>
                         <ul className="space-y-1">
                           {games.map((game) => (
                             <li key={game} className="text-gray-300 hover:text-white">
@@ -430,7 +405,7 @@ export default function Games() {
               {selectedHardware && (
                 <div className="hidden md:block">
                   <h3 className="text-2xl font-bold mb-4">
-                    {selectedHardware} Games
+                    {selectedHardware === "Taito F3" ? "Taito F3 Games" : `${selectedHardware} Games`}
                   </h3>
                   <div className="bg-gray-800 rounded-lg p-6">
                     <ul className="grid grid-cols-1 gap-1 text-sm">
