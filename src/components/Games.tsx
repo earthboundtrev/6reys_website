@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Gamepad2 } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
 import Carousel from './Carousel';
 import VideoPlayer from './VideoPlayer';
 import { Link } from 'react-router-dom';
@@ -46,11 +45,15 @@ const hardwareImages = {
   Lindbergh: "sega_lindebergh_board_logo.png",
   Naomi: "Sega_NAOMI_logo.png",
   "Neo Geo MVS": "Neo%20Geo.png",
-  "Taito F3": "Taito.png"
+  "Taito F3": "Taito.png",
+  "Taito TTX": "Taito.png",
+  "Taito TTX2": "Taito.png",
+  "Taito TTX3": "Taito.png"
 };
 
 export default function Games() {
   const [selectedHardware, setSelectedHardware] = useState<string | null>(null);
+  const [showAllTaito, setShowAllTaito] = useState(false);
 
   // Game lists organized by hardware
   const gamesByHardware = {
@@ -389,8 +392,171 @@ export default function Games() {
       "Re-Seal RV",
       "Ring Rage",
       "Ring Rise"
+    ],
+    "Taito TTX": [
+      "Blocking Ball Shooter",
+      "Chaos Breaker FX",
+      "Espgaluda Generations",
+      "Goketsujii Ichizoku Matsuri",
+      "Sengo Tengon",
+      "Gun Down Spirits of Zeon",
+      "Homura TTX",
+      "King of Fighters '98 Ultimate Match",
+      "King of Fighters Sky Stage",
+      "Raiden TTX",
+      "Raiden IV TTX",
+      "Shikigami No Shiro III",
+      "Silent Hill The Arcade",
+      "Space Adventure TTX",
+      "Taisen Hot Gimmick 5",
+      "Tetris The Grand Master 5: Terror",
+      "Trouble Witches AC",
+      "Value Limit R"
+    ],
+    "Taito TTX2": [
+      "Akai Katana",
+      "Aqua Pazza Aquaplus Dream Match",
+      "Arcana Heart 2",
+      "Arcana Heart 3 - Love Max",
+      "Six Stars!!!",
+      "Battle Fantasia",
+      "BlazBlue: Calamity Trigger",
+      "BlazBlue: Central Fiction",
+      "BlazBlue: Continuum Shift",
+      "BlazBlue: Continuum Shift II",
+      "BlazBlue: Chronophantasma",
+      "Chaos Breaker",
+      "Chaos Code - New Sign of Catastrophe",
+      "Crimzon Clover for NESiCAxLive",
+      "DIGI Arcade",
+      "Daemon Bride - Additional Gain",
+      "Darius Burst Another Chronicle",
+      "Darius Burst Another Chronicle EX",
+      "Dark Awake - The King Has No Name",
+      "Deathsmiles - Run For Your Dorime",
+      "Elevator Action",
+      "Ein-Eins Perfektewelt",
+      "Exception",
+      "Gaia Attack 4",
+      "Goketsujii Ichizoku - Matsuri",
+      "Groove Coaster",
+      "Haunted Museum",
+      "Haunted Museum II",
+      "Homura",
+      "Hyper Street Fighter II - The Anniversary Edition",
+      "Ikaruga",
+      "King of Fighters '98 Ultimate Match Final Edition",
+      "King of Fighters 2002 Unlimited Match",
+      "King of Fighters XII",
+      "King of Fighters XIII",
+      "King of Fighters XIII Climax",
+      "King of Fighters Maximum Impact Regulation A",
+      "Magical Beat",
+      "Music GunGun! 2",
+      "Nitroplus Blasterz: Heroines Infinite Duel",
+      "Persona 4 - The Ultimate in Mayonaka Arena",
+      "Persona 4 - The Ultimax Ultra Suplex Hold",
+      "Power Instinct 2012",
+      "Psychic Force 2012",
+      "Raiden III",
+      "Raiden IV",
+      "Raiden Saga",
+      "The Rumble Fish 2",
+      "Samurai Shodown - Edge of Destiny",
+      "Senkou No Ronde DUO v2.05",
+      "Skullgirls 2nd Encore",
+      "Space Invaders for NESiCAxLive",
+      "Space Adventure",
+      "Spica Adventure",
+      "Street Fighter Zero 3",
+      "Street Fighter III 3rd Strike",
+      "Street Fighter IV"
+    ],
+    "Taito TTX3": [
+      "BlazBlue Central Fiction",
+      "BlazBlue Cross Tag Battle",
+      "Death Road Survivors",
+      "Fighting Ex Layer",
+      "The King of Fatal Fantasy",
+      "Kill Signal",
+      "King of Fighters XIV",
+      "Mother Arthur Arena Blood",
+      "Samurai Spirits",
+      "School of Ragnarock",
+      "SNK Tag Team Frenzy AC",
+      "Street Fighter V Type Arcade",
+      "Street Fighter III 3rd Strike",
+      "Street Fighter IV",
+      "Susso! Dream Depth 4 v1.8",
+      "Super Street Fighter IV Arcade Edition",
+      "Super Street Fighter IV Arcade Edition 2012",
+      "Tatakai & Mahjong",
+      "Trouble Witches AC - Amalgam no Joutachi",
+      "Ultra Street Fighter IV",
+      "Vampire Savior - The Lord of Vampire",
+      "Wacky Races",
+      "Yatagarasu Attack on Cataclysm"
     ]
   };
+
+  // Helper function to check if a system is Taito
+  const isTaitoSystem = (system: string) => system.startsWith('Taito');
+
+  // Modified render logic for hardware buttons
+  const renderHardwareButtons = () => {
+    const systems = Object.keys(gamesByHardware);
+    
+    return systems.map(hardware => {
+      // Skip other Taito systems when not showing all
+      if (isTaitoSystem(hardware) && !showAllTaito && hardware !== 'Taito F3') {
+        return null;
+      }
+
+      // Add number badge for Taito systems
+      const getTaitoNumber = () => {
+        switch(hardware) {
+          case 'Taito F3': return 1;
+          case 'Taito TTX': return 2;
+          case 'Taito TTX2': return 3;
+          case 'Taito TTX3': return 4;
+          default: return null;
+        }
+      };
+
+      return (
+        <div key={hardware} className="flex flex-col">
+          <button 
+            className={`relative transition-colors p-6 rounded-lg w-full h-[120px] flex items-center justify-center
+              ${selectedHardware === hardware ? 'bg-pink-500' : 'bg-gray-800 hover:bg-pink-500'}`}
+            onClick={() => {
+              if (isTaitoSystem(hardware)) {
+                setShowAllTaito(true);
+              }
+              setSelectedHardware(selectedHardware === hardware ? null : hardware);
+            }}
+          >
+            <img 
+              src={`https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/${hardwareImages[hardware]}`}
+              alt={hardware}
+              className="max-h-[80px] w-auto object-contain"
+            />
+            {isTaitoSystem(hardware) && showAllTaito && (
+              <span className="absolute top-2 right-2 bg-white text-black rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+                {getTaitoNumber()}
+              </span>
+            )}
+          </button>
+        </div>
+      );
+    });
+  };
+
+  // Update useEffect to handle Taito visibility
+  useEffect(() => {
+    if (!selectedHardware || !isTaitoSystem(selectedHardware)) {
+      setShowAllTaito(false);
+    }
+  }, [selectedHardware]);
 
   return (
     <section id="games" className="py-20 bg-[#0A1929] text-white">
@@ -476,37 +642,7 @@ export default function Games() {
             {/* Hardware buttons - now on the left side */}
             <div className="md:w-1/2">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Object.entries(gamesByHardware).map(([hardware, games]) => (
-                  <div key={hardware} className="flex flex-col">
-                    <button 
-                      className={`transition-colors p-6 rounded-lg w-full h-[120px] flex items-center justify-center
-                        ${selectedHardware === hardware ? 'bg-pink-500' : 'bg-gray-800 hover:bg-pink-500'}`}
-                      onClick={() => setSelectedHardware(selectedHardware === hardware ? null : hardware)}
-                    >
-                      <img 
-                        src={`https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/${hardwareImages[hardware]}`}
-                        alt={hardware}
-                        className="max-h-[80px] w-auto object-contain"
-                      />
-                    </button>
-                    
-                    {/* Mobile Game List */}
-                    {selectedHardware === hardware && (
-                      <div className="md:hidden mt-4 bg-gray-800 rounded-lg p-4">
-                        <h3 className="text-xl font-bold mb-2">
-                          {hardware === "Taito F3" ? "Taito F3 Games" : `${hardware} Games`}
-                        </h3>
-                        <ul className="space-y-1">
-                          {games.map((game) => (
-                            <li key={game} className="text-gray-300 hover:text-white">
-                              • {game}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                {renderHardwareButtons()}
               </div>
             </div>
 
