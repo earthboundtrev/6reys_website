@@ -735,9 +735,12 @@ export default function Games() {
 
         {/* Hardware Section */}
         <div id="arcade-selection" className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-2 text-center">
             Explore Our Complete Arcade Game Collection
           </h2>
+          <p className="text-gray-400 text-center mb-8">
+            Click any system below to see its available games.
+          </p>
           
           {/* Grid of hardware buttons */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
