@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Gamepad2 } from 'lucide-react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Gamepad2, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react';
 import Carousel from './Carousel';
 import VideoPlayer from './VideoPlayer';
 import { Link } from 'react-router-dom';
@@ -37,14 +36,17 @@ const gameImages = [
 
 // Remove Laserdisc from hardware images mapping
 const hardwareImages = {
+  "Arcade Classics": "Arcade%20Classics.png",
+  "Arcade Shooters": "Arcade%20Shooters.png",
   Atomiswave: "Atomiswave_Logo.webp",
   CSP1: "Capcom%20CPS-1.png",
   CSP2: "Capcom%20CPS-2.png",
   CSP3: "Capcom%20CPS-3.png",
-  ES3: "namco_system_es3_logo.png",
-  Lindbergh: "sega_lindebergh_board_logo.png",
-  Naomi: "Sega_NAOMI_logo.png",
+  "Namco ES3": "namco_system_es3_logo.png",
   "Neo Geo MVS": "Neo%20Geo.png",
+  "Sega Lindbergh": "sega_lindebergh_board_logo.png",
+  "Sega Naomi": "Sega_NAOMI_logo.png",
+  "Sega Ringedge": "Sega.png",
   "Taito F3": "Taito.png",
   "Taito TTX": "Taito.png",
   "Taito TTX2": "Taito.png",
@@ -57,6 +59,70 @@ export default function Games() {
 
   // Game lists organized by hardware
   const gamesByHardware = {
+    "Arcade Classics": [
+      "Bad Dudes vs Dragon Ninja",
+      "Battle Circuit",
+      "Black Tiger",
+      "Bubble Bobble",
+      "Bubble Bobble Test Game 1.2",
+      "Captain America and The Avengers",
+      "Century Evolution HD",
+      "Crazy Taxi",
+      "Double Dragon",
+      "Fightcade",
+      "Fighter Instinct",
+      "Gauntlet",
+      "Honor Front",
+      "House of the Dead",
+      "Martial Kombat",
+      "Martial Kombat 2",
+      "Martial Kombat 3",
+      "Martial Kombat vs Gunmaster",
+      "NBA Anytime",
+      "NBA Jam",
+      "NBA Jam: Tournament Edition",
+      "NBA Maximum Hangtime",
+      "NBA on Fire",
+      "NBA Showtime-NBA on NBC Gold Edition",
+      "Night Slashers",
+      "Ninja Baseball Bat Man",
+      "Oriental Legend",
+      "Police Trainer",
+      "Project Fighter 15",
+      "SF Games",
+      "San Francisco Rush Extreme Racing",
+      "Secret Agent",
+      "Shinobi",
+      "Shinobi Saga",
+      "Sky Secret Agent",
+      "Star Wars Trilogy Arcade",
+      "Street Fighters",
+      "Tatsunoko vs Capcom: Ultimate All Stars",
+      "Teenage Mutant Ninja Turtles",
+      "Teenage Mutant Ninja Turtles 2",
+      "The Simpsons",
+      "Treasure Coaster",
+      "Turtles in Time",
+      "Ultimate Mortal Kombat 3",
+      "Ultimate Mortal Kombat 3X",
+      "Vendetta",
+      "WWF Superstars",
+      "WWF Wrestlefest",
+      "WWF Wrestling",
+      "Wonder Boy",
+      "Wonder Boy in Monster Land",
+      "X-Men vs Gunmaster"
+    ],
+    "Arcade Shooters": [
+      "Air Buster",
+      "Boogie Wings",
+      "Blazing Angels",
+      "Captain James",
+      "Cotton Parodius",
+      "Life Force Salamander 2",
+      "Sexy Parodius EN",
+      "Sexy Parodius JP"
+    ],
     Atomiswave: [
       "Animale Kaiser",
       "Block Pong",
@@ -177,7 +243,7 @@ export default function Games() {
       "Street Fighter III: 3rd Strike EN",
       "Street Fighter III: 3rd Strike JP"
     ],
-    ES3: [
+    "Namco ES3": [
       "Lost Island Adventure",
       "Lost Island Adventure Demo",
       "Mario Kart Arcade GP DX",
@@ -189,33 +255,6 @@ export default function Games() {
       "Time Crisis 5",
       "Vampire Night Arcade Time 5",
       "Vampire Night Arcade Time 5"
-    ],
-    Lindbergh: [
-      "After Burner Climax",
-      "Rampage Medley",
-      "Initial D Arcade Stage 4",
-      "Initial D Arcade Stage 4 EX",
-      "Let's Go Jungle: Lost on the Island",
-      "Island of Spirit",
-      "Let's Go Jungle Special",
-      "Rampage 2: Special Tours Deluxe",
-      "Rampage 4: Ultimate Street",
-      "Sega Race TV",
-      "Star Trek: Voyager The Arcade",
-      "Secuna",
-      "Pop Splash",
-      "Virtual Fighter 5 Rev C",
-      "Virtua Tennis 3"
-    ],
-    Naomi: [
-      "Capcom vs SNK 2",
-      "Dynamite",
-      "Marvel vs Capcom 2",
-      "Marvel vs Capcom 2 ENG",
-      "Power Stone",
-      "Power Stone 2",
-      "Virtua Tennis 2",
-      "Zero Gunner 2"
     ],
     "Neo Geo MVS": [
       "2020 Super Baseball",
@@ -358,6 +397,59 @@ export default function Games() {
       "Zed Blade",
       "Zintrick",
       "Zupapa!"
+    ],
+    "Sega Lindbergh": [
+      "After Burner Climax",
+      "Rampage Medley",
+      "Initial D Arcade Stage 4",
+      "Initial D Arcade Stage 4 EX",
+      "Let's Go Jungle: Lost on the Island",
+      "Island of Spirit",
+      "Let's Go Jungle Special",
+      "Rampage 2: Special Tours Deluxe",
+      "Rampage 4: Ultimate Street",
+      "Sega Race TV",
+      "Star Trek: Voyager The Arcade",
+      "Secuna",
+      "Pop Splash",
+      "Virtual Fighter 5 Rev C",
+      "Virtua Tennis 3"
+    ],
+    "Sega Naomi": [
+      "Capcom vs SNK 2",
+      "Dynamite",
+      "Marvel vs Capcom 2",
+      "Marvel vs Capcom 2 ENG",
+      "Power Stone",
+      "Power Stone 2",
+      "Virtua Tennis 2",
+      "Zero Gunner 2"
+    ],
+    "Sega Ringedge": [
+      "Blade Arcus from Shining",
+      "Blade Strangers",
+      "Border Break S Ultimate",
+      "Fighting Climax",
+      "Fighting Climax Ignition",
+      "Guilty Gear Gold Rev 2",
+      "Guilty Gear XX AC Plus R",
+      "Guilty Gear XX AC Core Plus R",
+      "Initial D Arcade Stage 8",
+      "Initial D Arcade Stage 8 Infinity",
+      "Let's Go Island",
+      "Let's Go Island: Lost on the Island of Tropics",
+      "Let's Go Safari",
+      "Melty Blood Actress Again",
+      "Operation G.H.O.S.T",
+      "Phantom Breaker Another Code",
+      "Dream Raiders",
+      "Sega Golden Gun",
+      "Sonic Sega All Stars Racing",
+      "Transformers Human Alliance",
+      "Under Defeat HD+",
+      "Under Night IN-BIRTH Exe Late",
+      "Under Night IN-BIRTH Exe Late[st]",
+      "Virtua Tennis 4"
     ],
     "Taito F3": [
       "ABC Arabian Magic",
@@ -558,6 +650,21 @@ export default function Games() {
     }
   }, [selectedHardware]);
 
+  // Inside the Games component, add this function
+  const scrollToArcadeSelection = () => {
+    const element = document.getElementById('arcade-selection');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToGameList = () => {
+    const element = document.getElementById('mobile-game-list');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="games" className="py-20 bg-[#0A1929] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -627,51 +734,86 @@ export default function Games() {
         </div>
 
         {/* Hardware Section */}
-        <div className="mb-16">
+        <div id="arcade-selection" className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center">
             Explore Our Complete Arcade Game Collection
           </h2>
           
-          {/* Mobile-only text placement */}
-          <p className="text-gray-400 mb-12 md:hidden">
-            Dive deep into our extensive library of arcade titles. Clicking each of the buttons will allow you to browse through our complete collection organized by hardware platform.
-          </p>
+          {/* Grid of hardware buttons */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+            {renderHardwareButtons()}
+          </div>
 
-          {/* New flex container for side-by-side layout */}
-          <div className="flex flex-col md:flex-row md:gap-8 md:items-start">
-            {/* Hardware buttons - now on the left side */}
-            <div className="md:w-1/2">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {renderHardwareButtons()}
+          {/* Desktop/Tablet Game List Section */}
+          {selectedHardware && (
+            <div className="hidden md:block">
+              <h3 className="text-2xl font-bold mb-4">
+                {selectedHardware === "Taito F3" ? "Taito F3 Games" : `${selectedHardware} Games`}
+              </h3>
+              <div className="bg-gray-800 rounded-lg p-6">
+                <ul className="grid grid-cols-1 gap-1 text-sm">
+                  {gamesByHardware[selectedHardware]?.map((game) => (
+                    <li key={game} className="text-gray-300 hover:text-white">
+                      • {game}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              {/* Back to Top button after game list */}
+              <div className="flex justify-center mt-8">
+                <button
+                  onClick={scrollToArcadeSelection}
+                  className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 hover:scale-105"
+                >
+                  <ChevronUp className="w-5 h-5" />
+                  <span>Back to Arcade Selection</span>
+                </button>
               </div>
             </div>
+          )}
 
-            {/* Text content and game list - now on the right side */}
-            <div className="md:w-1/2">
-              {/* Desktop/tablet-only text placement */}
-              <p className="text-gray-400 mb-12 max-w-2xl mx-auto md:mx-0 hidden md:block">
-                Dive deep into our extensive library of arcade titles. Browse through our complete collection organized by hardware platform.
-              </p>
-
-              {/* Desktop Game List Section */}
-              {selectedHardware && (
-                <div className="hidden md:block">
-                  <h3 className="text-2xl font-bold mb-4">
-                    {selectedHardware === "Taito F3" ? "Taito F3 Games" : `${selectedHardware} Games`}
-                  </h3>
-                  <div className="bg-gray-800 rounded-lg p-6">
-                    <ul className="grid grid-cols-1 gap-1 text-sm">
-                      {gamesByHardware[selectedHardware]?.map((game) => (
-                        <li key={game} className="text-gray-300 hover:text-white">
-                          • {game}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+          {/* Mobile Game List */}
+          <div id="mobile-game-list" className="md:hidden">
+            {selectedHardware && (
+              <div className="mt-4 bg-gray-800 rounded-lg p-4">
+                <h3 className="text-xl font-bold mb-2">
+                  {selectedHardware === "Taito F3" ? "Taito F3 Games" : `${selectedHardware} Games`}
+                </h3>
+                <ul className="space-y-1">
+                  {gamesByHardware[selectedHardware]?.map((game) => (
+                    <li key={game} className="text-gray-300">
+                      • {game}
+                    </li>
+                  ))}
+                </ul>
+                
+                {/* Mobile Back to Arcade Selection button */}
+                <div className="flex justify-center mt-8">
+                  <button
+                    onClick={scrollToArcadeSelection}
+                    className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 active:scale-95"
+                  >
+                    <ChevronUp className="w-5 h-5" />
+                    <span>Back to Arcade Selection</span>
+                  </button>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
+
+          {/* Back to Top button when no hardware is selected */}
+          {!selectedHardware && (
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={scrollToArcadeSelection}
+                className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 hover:scale-105 md:hover:scale-105 active:scale-95"
+              >
+                <ChevronUp className="w-5 h-5" />
+                <span>Back to Arcade Selection</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
