@@ -9,17 +9,24 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-white font-semibold mb-4">Newsletter</h3>
-            <p className="text-gray-300 mb-4">Subscribe to get updates about new games and events!</p>
-            <div className="flex flex-col min-[800px]:flex-row gap-2 min-[800px]:gap-0">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full min-[800px]:w-auto flex-1 px-4 py-2 rounded-md min-[800px]:rounded-r-none bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-pink-500"
-              />
-              <button className="w-full min-[800px]:w-auto px-4 py-2 bg-purple-600 hover:bg-pink-700 text-white rounded-md min-[800px]:rounded-l-none transition-colors">
-                Subscribe
-              </button>
+            <h3 className="text-white font-semibold mb-4">Visit Us</h3>
+            <div className="space-y-3 text-gray-300">
+              <div className="flex items-center gap-2">
+                <MapPin className="h-5 w-5 text-purple-500" />
+                <p>110B East Washington St., Orange, VA 22960</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="h-5 w-5 text-purple-500" />
+                <p>(540) 661-8866</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-5 w-5 text-purple-500" />
+                <div>
+                  <p>Monday - Wednesday: CLOSED</p>
+                  <p>Thursday: 12PM - 8PM</p>
+                  <p>Friday - Sunday: 12PM - 10PM</p>
+                </div>
+              </div>
             </div>
           </div>
           
