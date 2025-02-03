@@ -119,9 +119,7 @@ export default function Games() {
       "Blazing Angels",
       "Captain James",
       "Cotton Parodius",
-      "Life Force Salamander 2",
-      "Sexy Parodius EN",
-      "Sexy Parodius JP"
+      "Life Force Salamander 2"
     ],
     Atomiswave: [
       "Animale Kaiser",
