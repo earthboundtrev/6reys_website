@@ -24,7 +24,8 @@ export default function Footer() {
                 <div>
                   <p>Monday - Wednesday: CLOSED</p>
                   <p>Thursday: 12PM - 8PM</p>
-                  <p>Friday - Sunday: 12PM - 10PM</p>
+                  <p>Friday and Saturday: 12PM - 10PM</p>
+                  <p>Sunday 1PM - 8PM</p>
                 </div>
               </div>
             </div>
