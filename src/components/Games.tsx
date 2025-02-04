@@ -57,6 +57,7 @@ const hardwareImages = {
 export default function Games() {
   const [selectedHardware, setSelectedHardware] = useState<string | null>(null);
   const [showAllTaito, setShowAllTaito] = useState(false);
+  const [currentGamesList, setCurrentGamesList] = useState<string[]>([]);
 
   // Game lists organized by hardware
   const gamesByHardware = {
@@ -672,6 +673,20 @@ export default function Games() {
     }
   }, [selectedHardware]);
 
+  // Update useEffect to handle game list updates
+  useEffect(() => {
+    if (selectedHardware) {
+      // Clear the current list first
+      setCurrentGamesList([]);
+      // Set the new list after a brief delay to ensure cleanup
+      setTimeout(() => {
+        setCurrentGamesList(gamesByHardware[selectedHardware] || []);
+      }, 0);
+    } else {
+      setCurrentGamesList([]);
+    }
+  }, [selectedHardware]);
+
   // Inside the Games component, add this function
   const scrollToArcadeSelection = () => {
     const element = document.getElementById('arcade-selection');
@@ -685,6 +700,21 @@ export default function Games() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  // Modify the rendering of game lists to use currentGamesList instead of directly accessing gamesByHardware
+  const renderGameList = () => {
+    if (!selectedHardware) return null;
+
+    return (
+      <ul className="grid grid-cols-1 gap-1 text-sm">
+        {currentGamesList.map((game) => (
+          <li key={game} className="text-gray-300 hover:text-white">
+            • {game}
+          </li>
+        ))}
+      </ul>
+    );
   };
 
   return (
@@ -776,13 +806,7 @@ export default function Games() {
                 {selectedHardware === "Taito F3" ? "Taito F3 Games" : `${selectedHardware} Games`}
               </h3>
               <div className="bg-gray-800 rounded-lg p-6">
-                <ul className="grid grid-cols-1 gap-1 text-sm">
-                  {gamesByHardware[selectedHardware]?.map((game) => (
-                    <li key={game} className="text-gray-300 hover:text-white">
-                      • {game}
-                    </li>
-                  ))}
-                </ul>
+                {renderGameList()}
               </div>
               
               {/* Back to Top button after game list */}
@@ -805,13 +829,7 @@ export default function Games() {
                 <h3 className="text-xl font-bold mb-2">
                   {selectedHardware === "Taito F3" ? "Taito F3 Games" : `${selectedHardware} Games`}
                 </h3>
-                <ul className="space-y-1">
-                  {gamesByHardware[selectedHardware]?.map((game) => (
-                    <li key={game} className="text-gray-300">
-                      • {game}
-                    </li>
-                  ))}
-                </ul>
+                {renderGameList()}
                 
                 {/* Mobile Back to Arcade Selection button */}
                 <div className="flex justify-center mt-8">
