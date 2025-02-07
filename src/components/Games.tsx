@@ -791,7 +791,7 @@ export default function Games() {
             Explore Our Complete Arcade Game Collection
           </h2>
           <p className="text-gray-400 text-center mb-8">
-            Click any system below to see its available games.
+            Click any system below to see its available games. Scroll down to see the full list of games for the system you select.
           </p>
           
           {/* Grid of hardware buttons */}
