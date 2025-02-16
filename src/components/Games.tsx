@@ -45,13 +45,16 @@ const hardwareImages = {
   CSP3: "Capcom%20CPS-3.png",
   "Namco ES3": "namco_system_es3_logo.png",
   "Neo Geo MVS": "Neo%20Geo.png",
+  "Nintendo Switch": "Nintendo.png",
+  "Playstation 5": "PlayStation_5_logo_and_wordmark.svg.png",
   "Sega Lindbergh": "sega_lindebergh_board_logo.png",
   "Sega Naomi": "Sega_NAOMI_logo.png",
   "Sega Ringedge": "Sega.png",
   "Taito F3": "Taito.png",
   "Taito TTX": "Taito.png",
   "Taito TTX2": "Taito.png",
-  "Taito TTX3": "Taito.png"
+  "Taito TTX3": "Taito.png",
+  "Xbox Series S": "Xbox_Series_S.png"
 };
 
 export default function Games() {
@@ -62,6 +65,7 @@ export default function Games() {
   // Game lists organized by hardware
   const gamesByHardware = {
     "Arcade Classics": [
+      "Arkanoid",
       "Bad Dudes vs Dragon Ninja",
       "Battle Circuit",
       "Black Tiger",
@@ -69,16 +73,25 @@ export default function Games() {
       "Bubble Bobble Test Game 1.2",
       "Captain America and The Avengers",
       "Century Evolution HD",
+      "Crash Roller",
       "Crazy Taxi",
       "Demon Front",
       "Double Dragon",
       "Fightcade",
+      "Fix it Felix",
+      "Frogger",
+      "Galaga",
       "Gauntlet",
       "Groove Coaster",
+      "Jungle Jack",
       "Killer Instinct",
+      "Lady Bug",
+      "Missile Command",
       "Mortal Kombat",
       "Mortal Kombat 2",
       "Mortal Kombat 3",
+      "Mr. Do's Castle",
+      "Mr. Do",
       "NBA Hangtime",
       "NBA Jam",
       "NBA Jam: Tournament Edition",
@@ -88,30 +101,42 @@ export default function Games() {
       "Night Slashers",
       "Ninja Baseball Bat Man",
       "Oriental Legend",
+      "Pacman",
+      "Phoenix",
+      "Pinball Action",
       "Police Trainer",
       "Project Fighter 15",
       "San Francisco Rush Extreme Racing",
+      "Scramble",
       "Secret Agent",
       "SF Games",
       "Shinobi",
       "Shinobi Saga",
       "Sly Spy: Secret Agent",
+      "Space Invaders",
+      "Space Panic",
       "Spectral vs Generation",
       "Star Wars Trilogy Arcade",
+      "Super Breakout",
+      "Super Pacman",
       "Sunset Riders",
+      "Tank Battalion",
       "Tatsunoko vs Capcom: Ultimate All Stars",
       "Teenage Mutant Ninja Turtles",
       "Teenage Mutant Ninja Turtles: Turtles in Time",
       "The Simpsons",
+      "Time Pilot",
       "Ultimate Mortal Kombat 3",
       "Ultimate Mortal Kombat 3+",
+      "Van-Van Car",
       "Vendetta",
       "Wonder Boy",
       "Wonder Boy in Monster Land",
       "WWF Superstars",
       "WWF Wrestling",
       "WWF Wrestlefest",
-      "X-Men vs Street Fighter"
+      "X-Men vs Street Fighter",
+      "Zaxxon"
     ],
     "Arcade Shooters": [
       "Air Buster",
@@ -611,6 +636,32 @@ export default function Games() {
       "School of Ragnarock",
       "SNK Tag Team Frenzy AC",
       "Street Fighter V Type Arcade",
+    ],
+    "Playstation 5": [
+      "Among Us",
+      "Battlefield 4",
+      "Call of Duty",
+      "Madden 25",
+      "NCAA 2025",
+      "Rocket League",
+      "Street Fighter 6",
+      "WWE 2K24"
+    ],
+    "Xbox Series S": [
+      "Among Us",
+      "Battlefield 4",
+      "Call of Duty",
+      "Madden 25",
+      "NCAA 2025",
+      "Rocket League",
+      "Street Fighter 6",
+      "WWE 2K24"
+    ],
+    "Nintendo Switch": [
+      "Gang Beast",
+      "Mario Kart 8",
+      "Super Mario Wonder",
+      "Super Smash Bros. Ultimate"
     ]
   };
 
@@ -788,7 +839,7 @@ export default function Games() {
         {/* Hardware Section */}
         <div id="arcade-selection" className="mb-16">
           <h2 className="text-3xl font-bold mb-2 text-center">
-            Explore Our Complete Arcade Game Collection
+            Explore Our Complete Game Collection
           </h2>
           <p className="text-gray-400 text-center mb-8">
             Click any system below to see its available games. Scroll down to see the full list of games for the system you select.
