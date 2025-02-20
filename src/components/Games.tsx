@@ -886,7 +886,7 @@ export default function Games() {
                     className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 active:scale-95"
                   >
                     <ChevronUp className="w-5 h-5" />
-                    <span>Back to Arcade Selection</span>
+                    <span>Back to Complete Game Collection</span>
                   </button>
                 </div>
               </div>
@@ -901,7 +901,7 @@ export default function Games() {
                 className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 hover:scale-105 md:hover:scale-105 active:scale-95"
               >
                 <ChevronUp className="w-5 h-5" />
-                <span>Back to Arcade Selection</span>
+                <span>Back to Complete Game Collection</span>
               </button>
             </div>
           )}
