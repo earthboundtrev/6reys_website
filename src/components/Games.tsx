@@ -257,7 +257,7 @@ export default function Games() {
       "Vampire Savior: The Lord of the Vampire",
       "Vampire: Children of the Night",
       "X-Men: Children of the Atom",
-      "X-men vs Street Fighter"
+      "X-Men vs Street Fighter"
     ],
     CSP3: [
       "JoJo's Venture EU",
@@ -505,11 +505,9 @@ export default function Games() {
     "Taito F3": [
       "ABC Arabian Magic",
       "Air Ranger Rescue",
-      "Bubble Memories",
-      "Bubble Memories: The Story of",
-      "Bubble Bobble III",
-      "Bubble Memories: The Story of",
-      "Bubble Bobble III Black Edition",
+      "Bubble Memories: The Story of Bubble Bobble III",
+      "Bubble Memories: The Story of Bubble Bobble III Black Edition",
+      "Bubble Symphony",
       "Cleopatra Fortune",
       "Gekirindan",
       "Grid Seeker: Project Storm Hammer",
