@@ -19,10 +19,16 @@ export default function Events() {
             Join us for our upcoming competitive events and become part of our growing community! 
           </p>
 
+          <br/>
+
+          <p>
+             Follow us on <a href="https://www.facebook.com/profile.php?id=100088216744060" className="text-white font-semibold hover:underline">Facebook</a> to keep with up all of our updates and events!
+          </p>
+
           <br />
 
           <p>
-             Click on the images if you want to be able to see bigger versions of them!
+             Click on the images below if you want to be able to see bigger versions of them!
           </p>
           
           </div>
@@ -31,19 +37,19 @@ export default function Events() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
-              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/march_calendar_list.jpg"
-              alt="March Events for 6R's Entertainment Yard in list form" 
+              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/apr_calendar_list.jpg"
+              alt="Apr Events for 6R's Entertainment Yard in list form" 
               className="w-full h-full object-contain rounded-lg cursor-pointer"
-              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/march_calendar_list.jpg")}
+              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/apr_calendar_list.jpg")}
             />
           </div>
           
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
-              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/apr_calendar_list.jpg"
-              alt="April Events for 6R's Entertainment Yard in list form" 
+              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/may_calendar_list.jpg"
+              alt="May Events for 6R's Entertainment Yard in list form" 
               className="w-full h-auto rounded-lg cursor-pointer"
-              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/apr_calendar_list.jpg")}
+              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/may_calendar_list.jpg")}
             />
           </div>
         </div>
