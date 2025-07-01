@@ -37,8 +37,8 @@ export default function Events() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
-              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/may_calendar_list.jpg"
-              alt="May Events for 6R's Entertainment Yard in list form" 
+              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/june_calendar_list.jpg"
+              alt="June Events for 6R's Entertainment Yard in list form" 
               className="w-full h-full object-contain rounded-lg cursor-pointer"
               onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/may_calendar_list.jpg")}
             />
@@ -46,8 +46,8 @@ export default function Events() {
           
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
-              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/june_calendar_list.jpg"
-              alt="June Events for 6R's Entertainment Yard in list form" 
+              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/july_calendar_list.jpg"
+              alt="July Events for 6R's Entertainment Yard in list form" 
               className="w-full h-auto rounded-lg cursor-pointer"
               onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/june_calendar_list.jpg")}
             />
