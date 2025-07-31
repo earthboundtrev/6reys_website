@@ -34,7 +34,7 @@ export default function Events() {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="bg-gray-800 p-4 rounded-lg">
             <img 
               src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/july_calendar_list.jpg"
@@ -51,6 +51,74 @@ export default function Events() {
               className="w-full h-auto rounded-lg cursor-pointer"
               onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/aug_calendar_list.jpg")}
             />
+          </div>
+        </div>
+
+        {/* Tournament Videos Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-4">Want to see what some of our tournaments are like?</h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Check out some of the archived livestreams from the previous months below:
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="aspect-video">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/-3tym79UImA?si=luAkMmx8Zys3OE1K" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="rounded-lg"
+              ></iframe>
+            </div>
+            
+            <div className="aspect-video">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/FVLkL_oR1p0?si=m6q-6VuUrE30ddA4" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="rounded-lg"
+              ></iframe>
+            </div>
+            
+            <div className="aspect-video">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/FlmqLBdgYG0?si=nZOjhhnV_hbo_S-2" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="rounded-lg"
+              ></iframe>
+            </div>
+            
+            <div className="aspect-video">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/vuRsWQCgVP0?si=_Nkw3Txpcmm59qlu" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="rounded-lg"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
