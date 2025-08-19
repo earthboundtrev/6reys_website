@@ -119,6 +119,34 @@ export default function Events() {
                 className="rounded-lg"
               ></iframe>
             </div>
+            
+            <div className="aspect-video">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/7p_gWUNeZdY?si=oR1vSzi26zLmgGmh" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="rounded-lg"
+              ></iframe>
+            </div>
+            
+            <div className="aspect-video">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/1YoRd1zX3DI?si=7nodV-qaJ8dXUyz7" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="rounded-lg"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
