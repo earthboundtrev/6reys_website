@@ -38,7 +38,7 @@ export default function Footer() {
               <li><a href="/games" className="text-gray-300 hover:text-pink-500 transition-colors">Games</a></li>
               <li><a href="/parties" className="text-gray-300 hover:text-pink-500 transition-colors">Parties</a></li>
               <li><a href="/events" className="text-gray-300 hover:text-pink-500 transition-colors">Events</a></li>
-              <li><a href="/tradeins" className="text-gray-300 hover:text-pink-500 transition-colors">Trade-ins</a></li>
+
               <li><a href="/prizes" className="text-gray-300 hover:text-pink-500 transition-colors">Prizes</a></li>
             </ul>
           </div>

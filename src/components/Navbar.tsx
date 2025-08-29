@@ -25,7 +25,7 @@ export default function Navbar() {
               <a href="/games" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Games</a>
               <a href="/parties" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Parties</a>
               <a href="/events" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Events</a>
-              <a href="/tradeins" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Trade-ins</a>
+
               <a href="prizes" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Prizes</a>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function Navbar() {
             <a href="/games" className="hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium">Games</a>
             <a href="/parties" className="hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium">Parties</a>
             <a href="/events" className="hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium">Events</a>
-            <a href="/tradeins" className="hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium">Trade-ins</a>
+
             <a href="prizes" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Prizes</a>
           </div>
         </div>

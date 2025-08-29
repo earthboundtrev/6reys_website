@@ -806,13 +806,7 @@ export default function Games() {
 
                 <br/>
 
-                <p>
-                  Do you have games, consoles, or peripherals to trade in? Learn about our trade in process <Link 
-                    to="/tradeins" 
-                    state={{ scrollToTop: true }} 
-                    className="text-white font-semibold hover:underline"
-                  >here!</Link>
-                </p>
+
 
                 <br/>
 
