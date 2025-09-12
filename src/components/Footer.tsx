@@ -23,7 +23,7 @@ export default function Footer() {
                 <Clock className="h-5 w-5 text-purple-500" />
                 <div>
                   <p>Monday - Wednesday: CLOSED</p>
-                  <p>Thursday: 12PM - 8PM</p>
+                  <p>Thursday: CLOSED</p>
                   <p>Friday and Saturday: 12PM - 10PM</p>
                   <p>Sunday 1PM - 8PM</p>
                 </div>
