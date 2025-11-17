@@ -37,17 +37,6 @@ export default function PricingSection() {
                 "Add an initial 20 tokens for an extra $3!",
                 "Add more tokens at any time! 4/$1 or 24/$5!"
               ]
-            },
-            {
-              name: "Thursday Special!",
-              price: "$8",
-              duration: "Deal offered every Thursday!",
-              features: [
-                "Unlimited gaming",
-                "In & out privileges",
-                "Add 20 tokens for an extra $3!",
-                "Add more tokens at any time! 4/$1 or 24/$5!"
-              ]
             }
           ].map((plan) => (
             <div
