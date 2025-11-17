@@ -14,7 +14,7 @@ export default function PricingSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 lg:grid-cols-2 max-w-4xl mx-auto">
           {[
             {
               name: "Hourly Pass",
