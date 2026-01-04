@@ -36,12 +36,6 @@ export default function Hero() {
                   <span className="hidden lg:inline">Our Games!</span>
                 </a>
                 <a
-                  href="/parties"
-                  className="mb-4 lg:mb-0 w-full lg:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-pink-700 transition-colors"
-                >
-                  Schedule a Party with us!
-                </a>
-                <a
                   href="/events"
                   className="w-full lg:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-pink-700 transition-colors"
                 >

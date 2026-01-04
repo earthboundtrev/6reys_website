@@ -1,4 +1,3 @@
-import React from 'react';
 import { Phone, MapPin, Clock } from 'lucide-react';
 import { Facebook, Instagram, Twitch, Youtube, Link  } from 'lucide-react';
 
@@ -36,7 +35,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a href="/" className="text-gray-300 hover:text-pink-500 transition-colors">Home</a></li>
               <li><a href="/games" className="text-gray-300 hover:text-pink-500 transition-colors">Games</a></li>
-              <li><a href="/parties" className="text-gray-300 hover:text-pink-500 transition-colors">Parties</a></li>
               <li><a href="/events" className="text-gray-300 hover:text-pink-500 transition-colors">Events</a></li>
 
               <li><a href="/prizes" className="text-gray-300 hover:text-pink-500 transition-colors">Prizes</a></li>

@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import Games from './components/Games';
 import Events from './components/Events';
 import Location from './components/Location';
-import Parties from './components/Parties';
 import PricingSection from './components/PricingSection';
 import Footer from './components/Footer';
 
@@ -31,13 +30,6 @@ function App() {
           <>
             <Navbar />
             <Games />
-            <Footer />
-          </>
-        } />
-        <Route path="/parties" element={
-          <>
-            <Navbar />
-            <Parties />
             <Footer />
           </>
         } />

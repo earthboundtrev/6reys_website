@@ -23,7 +23,6 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-4">
               <a href="/" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Home</a>
               <a href="/games" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Games</a>
-              <a href="/parties" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Parties</a>
               <a href="/events" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Events</a>
 
               <a href="prizes" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Prizes</a>
@@ -46,7 +45,6 @@ export default function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="/" className="hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
             <a href="/games" className="hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium">Games</a>
-            <a href="/parties" className="hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium">Parties</a>
             <a href="/events" className="hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium">Events</a>
 
             <a href="prizes" className="hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Prizes</a>
