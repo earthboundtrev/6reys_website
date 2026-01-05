@@ -1,11 +1,24 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
+import { useAnnouncement } from '../contexts/AnnouncementContext';
+import { useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const { isBannerVisible } = useAnnouncement();
+  const location = useLocation();
+  
+  // Check if banner should be visible (not on closure-announcement page)
+  const bannerShouldBeVisible = location.pathname !== '/closure-announcement' && isBannerVisible;
+  
+  // Calculate top position: if banner is visible, position navbar below it (approximately 40-50px)
+  const topValue = bannerShouldBeVisible ? 40 : 0;
 
   return (
-    <nav className="bg-black/90 text-white fixed w-full z-50">
+    <nav 
+      className="bg-black/90 text-white fixed w-full z-40 transition-all duration-300 ease-in-out"
+      style={{ top: `${topValue}px` }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">

@@ -7,6 +7,9 @@ import Events from './components/Events';
 import Location from './components/Location';
 import PricingSection from './components/PricingSection';
 import Footer from './components/Footer';
+import AnnouncementBanner from './components/AnnouncementBanner';
+import ClosureAnnouncement from './components/ClosureAnnouncement';
+import { AnnouncementProvider } from './contexts/AnnouncementContext';
 
 import Prizes from './components/Prizes';
 import { useScrollToTop } from './hooks/useScrollToTop';
@@ -15,8 +18,10 @@ function App() {
   useScrollToTop();
   
   return (
-    <div className="min-h-screen bg-black">
-      <Navbar />
+    <AnnouncementProvider>
+      <div className="min-h-screen bg-black">
+        <AnnouncementBanner />
+        <Navbar />
       <Routes>
         <Route path="/" element={
           <>
@@ -48,8 +53,16 @@ function App() {
             <Footer />
           </>
         } />
+        <Route path="/closure-announcement" element={
+          <>
+            <Navbar />
+            <ClosureAnnouncement />
+            <Footer />
+          </>
+        } />
       </Routes>
-    </div>
+      </div>
+    </AnnouncementProvider>
   );
 }
 

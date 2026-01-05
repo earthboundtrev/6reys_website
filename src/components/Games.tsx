@@ -775,6 +775,13 @@ export default function Games() {
         <div className="mb-16">
           <h2 className="text-4xl font-bold mb-4 text-center">Explore Our Game Collection</h2>
           
+          {/* Notice about store closing */}
+          <div className="mb-6 p-4 bg-purple-900/50 border border-pink-500/50 rounded-lg max-w-4xl mx-auto">
+            <p className="text-gray-300 text-center">
+              <span className="font-semibold text-pink-400">Important Note:</span> As we prepare for our closure, please be aware that not all of the games listed on this page are currently available at our location. Our game collection has changed over time, and some games may have been removed or relocated.
+            </p>
+          </div>
+          
           {/* New flex container for side-by-side layout */}
           <div className="flex flex-col md:flex-row md:gap-8">
             {/* Text content - 40% width on desktop/tablet */}
