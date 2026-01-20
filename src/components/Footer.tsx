@@ -21,10 +21,8 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <Clock className="h-5 w-5 text-purple-500" />
                 <div>
-                  <p>Monday - Wednesday: CLOSED</p>
-                  <p>Thursday: CLOSED</p>
-                  <p>Friday and Saturday: 12PM - 10PM</p>
-                  <p>Sunday 1PM - 8PM</p>
+                  <p className="text-pink-400 font-semibold">Permanently Closed</p>
+                  <p className="text-gray-400 text-sm mt-1">As of January 19th, 2026</p>
                 </div>
               </div>
             </div>

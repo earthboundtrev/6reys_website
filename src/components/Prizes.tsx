@@ -36,42 +36,49 @@ export default function Prizes() {
           <img src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/6_reys_logo.jpg" alt="6R's entertainment yard logo" className="mx-auto mb-4" />
         </div>
         
-        <h2 className="text-4xl font-bold mb-8 text-center">We have tickets and prizes!</h2>
+        <h2 className="text-4xl font-bold mb-4 text-center">Tickets and Prizes</h2>
+        
+        {/* Notice about store closing and historical purposes */}
+        <div className="mb-8 p-4 bg-purple-900/50 border border-pink-500/50 rounded-lg max-w-4xl mx-auto">
+          <p className="text-gray-300 text-center">
+            <span className="font-semibold text-pink-400">Note:</span> 6R's Entertainment Yard is permanently closed as of January 19th, 2026. This page is kept online for historical purposes to showcase the tickets and prizes we offered during our operation. The content here reflects what we featured while we were open.
+          </p>
+        </div>
         
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-[50%] text-gray-400">
             <p>
-              Do you like prizes? You can win them at 6R's! We have lots of exciting redemption games where you can earn tickets to trade in for awesome prizes.
+              Did you like prizes? You could win them at 6R's! We had lots of exciting redemption games where you could earn tickets to trade in for awesome prizes.
             </p>
 
             <br/>
 
             <p>
-              Try your luck at our <span className="text-white font-semibold">claw game</span>, <span className="text-white font-semibold">cyclone redemption game</span>, or shoot some hoops in <span className="text-white font-semibold">Hoop it Up</span> to earn tickets! 
+              You could try your luck at our <span className="text-white font-semibold">claw game</span>, <span className="text-white font-semibold">cyclone redemption game</span>, or shoot some hoops in <span className="text-white font-semibold">Hoop it Up</span> to earn tickets! 
             </p>
 
             <br/>
 
             <p>
-              The more you play, the more tickets you can win.
+              The more you played, the more tickets you could win.
             </p>
 
             <br/>
 
             <p>
-              Once you've collected enough tickets, bring them to our prize counter where you can exchange them for a variety of fun prizes and goodies. We regularly update our prize selection to keep things fresh and exciting.
+              Once you'd collected enough tickets, you could bring them to our prize counter where you could exchange them for a variety of fun prizes and goodies. We regularly updated our prize selection to keep things fresh and exciting.
             </p>
 
             <br/>
             
             <p>
-              The prizes we offer can change depending on what we have in stock. Check out the carousel to see examples of some of the awesome prizes we've featured in the past! From small trinkets to bigger items, there's something for everyone.
+              The prizes we offered could change depending on what we had in stock. Check out the carousel to see examples of some of the awesome prizes we featured! From small trinkets to bigger items, there was something for everyone.
             </p>
 
             <br/>
 
             <p>
-             We have a ton of games and videogames for you to play as well! You can check out what we offer <Link to="/games" className="text-white font-semibold hover:underline">here</Link>!
+             We also had a ton of games and videogames for you to play as well! You can check out what we offered <Link to="/games" className="text-white font-semibold hover:underline">here</Link>!
             </p>
           </div>
 

@@ -34,7 +34,7 @@ export default function AnnouncementBanner() {
     >
       <div className="max-w-7xl mx-auto flex items-center h-full gap-2 px-2 sm:px-4 py-1">
         <div className="flex-1 text-center text-xs sm:text-sm">
-          <span className="font-semibold">6R's Entertainment Yard closes February 1st:</span> It was our pleasure to provide a safe & positive space for the kids & families of Orange County! We've appreciated everyone's support for this almost 3yr adventure! 
+          <span className="font-semibold">As of January 19th, 2026, we are officially closed for business permanently.</span> It's been an amazing run and we would not change a thing! 
           <span className="underline ml-1">Click here to learn more.</span>
         </div>
         <button

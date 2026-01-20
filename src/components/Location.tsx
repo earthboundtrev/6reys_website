@@ -28,10 +28,8 @@ export default function Location() {
               <div>
                 <h3 className="font-bold mb-2">Hours</h3>
                 <p className="text-gray-400">
-                  Monday - Wednesday: CLOSED <br />
-                  Thursday: CLOSED <br />
-                  Friday and Saturday: 12PM - 10PM <br />
-                  Sunday: 1PM - 8PM <br/>
+                  <span className="text-pink-400 font-semibold">Permanently Closed</span> <br />
+                  As of January 19th, 2026
                 </p>
               </div>
             </div>

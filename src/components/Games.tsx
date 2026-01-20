@@ -775,10 +775,10 @@ export default function Games() {
         <div className="mb-16">
           <h2 className="text-4xl font-bold mb-4 text-center">Explore Our Game Collection</h2>
           
-          {/* Notice about store closing */}
+          {/* Notice about store closing and historical purposes */}
           <div className="mb-6 p-4 bg-purple-900/50 border border-pink-500/50 rounded-lg max-w-4xl mx-auto">
             <p className="text-gray-300 text-center">
-              <span className="font-semibold text-pink-400">Important Note:</span> As we prepare for our closure, please be aware that not all of the games listed on this page are currently available at our location. Our game collection has changed over time, and some games may have been removed or relocated.
+              <span className="font-semibold text-pink-400">Note:</span> 6R's Entertainment Yard is permanently closed as of January 19th, 2026. This page is kept online for historical purposes to showcase the game collection we featured during our operation. The games and hardware listed here reflect what we offered while we were open. Check out <a href="https://www.facebook.com/share/p/1JfYuWkaiS/" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:text-pink-300 underline font-semibold">what's currently for sale</a> on our Facebook page.
             </p>
           </div>
           
@@ -788,23 +788,23 @@ export default function Games() {
             <div className="md:w-[40%] mb-8 md:mb-0">
               <div className="text-gray-400">
                 <p>
-                  We love videogames here at 6R's! Don't just take our word for it! We've got some pictures that show you exactly what we mean!
+                  We loved videogames here at 6R's! Don't just take our word for it! We've got some pictures that show you exactly what we mean!
                 </p>
 
                 <br/>
 
                 <p>
-                  How much do we love videogames? We love them so much that we've assembled a great collection of arcade cabinets, modern consoles, and arcade and console games for you to play with.
+                  How much did we love videogames? We loved them so much that we assembled a great collection of arcade cabinets, modern consoles, and arcade and console games for you to play with.
                 </p>
 
                 <br/>
 
-                <p>We even have air hockey and pinball!</p>
+                <p>We even had air hockey and pinball!</p>
 
                 <br/>
 
                 <p>
-                   We also have a ton of tickets and prizes for you to win as well! You can check out what we offer <Link 
+                   We also had a ton of tickets and prizes for you to win as well! You can check out what we offered <Link 
                      to="/prizes" 
                      state={{ scrollToTop: true }} 
                      className="text-white font-semibold hover:underline"

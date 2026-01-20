@@ -18,9 +18,9 @@ export default function ClosureAnnouncement() {
         <div className="bg-white rounded-lg p-6 shadow-lg">
           <div className="flex justify-center">
             <iframe 
-              src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ZxS4FhvXzmnPN82R72wdQDFHoqXiurG5hVRfVYbroPFMzyP8dvhRSPx91SLVdUDpl%26id%3D100088216744060&show_text=true&width=500" 
+              src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02gA55QGLbbEhXTQUnbJR9mxvN5rBBeaLQN9Pu28wpUzMfohkSu1gLCjk6oZE4aVYVl%26id%3D100088216744060&show_text=true&width=500" 
               width="500" 
-              height="732" 
+              height="706" 
               style={{border:'none', overflow:'hidden'}} 
               scrolling="no" 
               frameBorder="0" 

@@ -13,52 +13,27 @@ export default function Events() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <img src="https://i.imgur.com/8on1Bky.png" alt="Event Chicken" className="mx-auto mb-4" />
-          <h2 className="text-4xl font-bold mb-4 text-center">Upcoming Events</h2>
+          <h2 className="text-4xl font-bold mb-4 text-center">Memories & Highlights</h2>
           <div className="text-gray-400 max-w-2xl mx-auto text-center">
           <p>
-            Join us for our upcoming competitive events and become part of our growing community! 
+            While we may be closed now, we want to celebrate all the amazing moments we shared together! Take a look back at some of our favorite archived moments from when we were open.
           </p>
 
           <br/>
 
           <p>
-             Follow us on <a href="https://www.facebook.com/profile.php?id=100088216744060" className="text-white font-semibold hover:underline">Facebook</a> to keep with up all of our updates and events!
-          </p>
-
-          <br />
-
-          <p>
-             Click on the images below if you want to be able to see bigger versions of them!
+             Follow us on <a href="https://www.facebook.com/profile.php?id=100088216744060" className="text-white font-semibold hover:underline">Facebook</a> to see more memories and updates!
           </p>
           
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-gray-800 p-4 rounded-lg">
-            <img 
-              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/aug_calendar_list.jpg"
-              alt="August Events for 6R's Entertainment Yard in list form" 
-              className="w-full h-full object-contain rounded-lg cursor-pointer"
-              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/aug_calendar_list.jpg")}
-            />
-          </div>
-          
-          <div className="bg-gray-800 p-4 rounded-lg">
-            <img 
-              src="https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/september_calendar_list.jpg"
-              alt="September Events for 6R's Entertainment Yard in list form" 
-              className="w-full h-auto rounded-lg cursor-pointer"
-              onClick={() => setSelectedImage("https://pub-7b456e1050984218856447be1d9a8efc.r2.dev/september_calendar_list.jpg")}
-            />
-          </div>
-        </div>
 
-        {/* Tournament Videos Section */}
+        {/* Highlight Reel Videos Section */}
         <div className="mb-16">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Want to see what some of our tournaments are like?</h3>
+            <h3 className="text-2xl font-bold mb-4">Tournament Highlights & Special Moments</h3>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Check out some of the archived livestreams from the previous months below:
+              Relive some of our favorite tournament moments and community events from our time in operation:
             </p>
           </div>
           
