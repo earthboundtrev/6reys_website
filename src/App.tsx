@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import Games from './components/Games';
 import Events from './components/Events';
 import Location from './components/Location';
-import PricingSection from './components/PricingSection';
 import Footer from './components/Footer';
 import AnnouncementBanner from './components/AnnouncementBanner';
 import ClosureAnnouncement from './components/ClosureAnnouncement';
@@ -26,7 +25,6 @@ function App() {
         <Route path="/" element={
           <>
             <Hero />
-            <PricingSection />
             <Location />
             <Footer />
           </>
