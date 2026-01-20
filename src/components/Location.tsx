@@ -7,9 +7,9 @@ export default function Location() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <MapPin className="h-12 w-12 text-pink-500 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold mb-4">Find Us</h2>
+          <h2 className="text-4xl font-bold mb-4">Where We Were</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Located in the heart of Orange, Virginia, where we bring high-quality classic and modern gaming to you at an incredible price!
+            We were located in the heart of Orange, Virginia, where we brought high-quality classic and modern gaming to you at an incredible price!
           </p>
         </div>
         
